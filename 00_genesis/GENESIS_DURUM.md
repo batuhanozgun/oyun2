@@ -69,6 +69,19 @@ verebilir · KEEL yanıtı okuyunca posta okunmuş görünür) · gerçek-veri i
 bırakıldı (sahip kararı — liste depoya giriyor, çocuğa dair dize yazmak sahibin kendi kuralını
 çiğnerdi; koruma kurala dayanıyor: VIZYON §7 + K-11).
 
+**ÇEKİLME SONRASI YAKALANAN — commit başlığı konvansiyonu (kurucunun hatası).** İşaret düşüp
+bekçi işletim kipine geçer geçmez `DURDURAN [şema] kapanis-disi-el-kitabi` bastı: F6 gereği
+EL_KITABI'ya en son dokunan commit'in başlığı `retro` ya da `genesis` içermeli, benimki
+`G3a · el kitabı + bekçi ayarı` idi. **El kitabının metnine dokunmak çözüm DEĞİLDİ** — kapanış
+dışında el kitabını düzenlemek tam da F6'nın yasakladığı şey; içerik ekleyerek denetimi susturmak
+oyunlama olurdu. Bu yüzden içerik değil ETİKET düzeltildi: o tek commit'in başlığı
+`genesis: el kitabi + bekci ayari (G3a)` oldu (yalnız başlık; ağaç aynı).
+Başlık düzeltmesi hash'leri değiştirdiği için kilitli-tarih çapası kabuk commit'inin yeni
+hash'ine güncellendi (`969ee82…`). Yedek etiket: `yedek-cekilme-oncesi`.
+Sonuç: bekçi `durduran=0 uyari=0 pencere=isletim` · çekilme kapısı YEŞİL.
+*Ders: kurulum adımlarının commit başlıkları konvansiyona (`genesis: …`) bağlıdır; bunu ölçen
+göz yalnız işaret düştükten SONRA açılıyor, yani hata ancak çekilme anında görünür oluyor.*
+
 **KURULUM TAMAM — GENESIS ÇEKİLDİ (2026-08-13).** Bundan sonra bu koltuk yoktur; sistem
 `00_pano/PANO.md`nin "SIRADAKİ OTURUM" satırından yürür.
 

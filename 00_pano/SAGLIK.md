@@ -1,10 +1,9 @@
 <!-- yazar: bekci-betigi — elle dokunma -->
-# SAGLIK — son denetim: 2026-08-13 02:16 (denetim #10)
+# SAGLIK — son denetim: 2026-08-13 02:21 (denetim #11)
 
-**Işıklar:** AKIŞ=KIRMIZI · DOSYA=KIRMIZI
+**Işıklar:** AKIŞ=YEŞİL · DOSYA=YEŞİL
 
 ## Kalemler
-- [KIRMIZI] [şema] kapanis-disi-el-kitabi: EL_KITABI son değişikliği retro-commit'i değil: 'G3a · el kitabı + bekçi ayarı' (F6)
 - [i] [golden-tazelik] golden-tazeligi: golden henüz yok/boş — kanon-fakir, içerik denetimi kutu kapanışında (EL_KITABI_KALIBI kanon-fakir esnemesi)
 - [i] [tavan] kapsam: tarandı
 - [i] [şema] kapsam: tarandı
