@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G4.5
-Durum: bitti
-Tamamlanan: G0, G1, G2, G3a, G3b, G4
+Adım: G5
+Durum: bekliyor
+Tamamlanan: G0, G1, G2, G3a, G3b, G4, G4.5
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·

@@ -12,6 +12,6 @@ Kırmızı: 0 · Sarı: 0
 ```
 
 ## YARGI BLOĞU — yazar: koordinator
-- **Aktif kutu:** yok — kurulum sürüyor; ilk kutu kabuğu G4'te doğar.
-- **SIRADAKİ OTURUM:** koordinator — ilk kutu açıldıktan sonra sevk buradan başlar.
+- **Aktif kutu:** KT-001 — **AÇIK.** Açılış mührü verildi (Ahmet · 2026-08-13).
+- **SIRADAKİ OTURUM:** koordinator — KT-001 planlama; G-01 her role birer görev doğuracak.
 - **Blokaj:** yok

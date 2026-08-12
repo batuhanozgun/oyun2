@@ -4,11 +4,11 @@
 **Durum:** AÇIK — ama **açılış mührü bekliyor.** Kutu ancak sahip mührü verince çalışmaya başlar;
 mührü GENESIS vermez, sahip verir. Tek faz · tek demo.
 
-**Açılış mührü:** bekliyor
+**Açılış mührü:** Ahmet · 2026-08-13
 
 <!-- Yukarıdaki satır MAKİNE-OKURDUR ve dönemin ön koşuludur (K3, 2026-08-07): mühürsüz kutuya
      `donem-ac.sh` dönem AÇMAZ. Mühür gelince satır "ad · YYYY-AA-GG" olur (G5 adımı damgalar,
-     ör. "Batu · 2026-08-07"); gelmezse `bekliyor` kalır ve kalem sahibin kuyruğuna düşer.
+     ör. "Ahmet · 2026-08-13"); gelmezse `bekliyor` kalır ve kalem sahibin kuyruğuna düşer.
      Doğuş: bu satır 2026-08-07'ye kadar HİÇBİR kalıpta yoktu — G5 var olmayan bir satıra damga
      bastırıyordu ve mührü okuyan tek bir betik bile yoktu, yani "mühürsüz eşik = süreç ihlali"
      hükmü (EL_KITABI) tamamen düzyazıda yaşıyordu. Satırı SİLMEK dönemi açmaz, KIRMIZI yapar.

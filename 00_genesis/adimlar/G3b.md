@@ -1,5 +1,5 @@
 <!-- GENESIS ADIM DOSYASI · G3b · Çekirdek yazımı (madde 3-5) — kanon · koruma · roller · pano
-     indeks: ../../GENESIS.md · durum: ../GENESIS_DURUM.md · sıra: SIRA.txt
+     indeks: ../GENESIS.md · durum: ../GENESIS_DURUM.md · sıra: SIRA.txt
      Yollar KÖKE göre yazılır (bu dosya 00_genesis/adimlar/ altında yaşar).
      Dosya tavanı 12 KB — ölçen: tools/guard/test/genesis-iskelet.test.mjs
      Madde numaraları G3.3'ten devam eder (G3.1-G3.2 G3a.md'de). -->

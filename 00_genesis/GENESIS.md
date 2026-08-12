@@ -42,19 +42,19 @@ tarif değildir.
 
 | Sıra | Adım | Dosya | Ne yapılır | Mühür |
 |---|---|---|---|---|
-| 1 | **G0** | `00_genesis/adimlar/G0.md` | Ortam kontrolü (0.0) · klasör hazırlığı (0.1) · sahibin adı · ağırlık kadranı | G0.3 |
-| 2 | **G1** | `00_genesis/adimlar/G1.md` | Brief · kabaca-harita · VIZYON + tohum kararlar | — |
-| 3 | **G2** | `00_genesis/adimlar/G2.md` | Rol türetme · dış göz koltuğu · kapsam yüzeyi · kadro tablosu | G2.5 |
-| 4 | **G3a** | `00_genesis/adimlar/G3a.md` | EL_KITABI (3.1) · bekçi (3.2) — yazım kuralları: `00_genesis/BEKCI_TARIFI.md` | — |
-| 5 | **G3b** | `00_genesis/adimlar/G3b.md` | Kanon (3.3) · koruma (3.3b) · rol becerileri (3.3c) · ileriye bakan iki kanon (3.3d) · kadronun alt-ajanları (3.3e) · otonom kipin dosyaları (3.3f) · pano (3.4) · kapı (3.5) | — |
-| 6 | **G4** | `00_genesis/adimlar/G4.md` | İlk kutu KABUĞU (sabit metin: `00_genesis/ILK_KUTU_KALIBI.md`) + kilitli-tarih çapası | — |
-| 7 | **G4.5** | `00_genesis/adimlar/G4.5.md` | Aktarım öz-denetimi — SABİT KAPI (`tools/guard/kurulum-denetimi.sh`) | — |
-| 8 | **G5** | `00_genesis/adimlar/G5.md` | Sahip kılavuzu · kokpit · otonom kipin makine ayarı (0c) · kutunun açılış mührü · ÇEKİLME | G5.1 → kutunun |
+| 1 | **G0** | `adimlar/G0.md` | Ortam kontrolü (0.0) · klasör hazırlığı (0.1) · sahibin adı · ağırlık kadranı | G0.3 |
+| 2 | **G1** | `adimlar/G1.md` | Brief · kabaca-harita · VIZYON + tohum kararlar | — |
+| 3 | **G2** | `adimlar/G2.md` | Rol türetme · dış göz koltuğu · kapsam yüzeyi · kadro tablosu | G2.5 |
+| 4 | **G3a** | `adimlar/G3a.md` | EL_KITABI (3.1) · bekçi (3.2) — yazım kuralları: `00_genesis/BEKCI_TARIFI.md` | — |
+| 5 | **G3b** | `adimlar/G3b.md` | Kanon (3.3) · koruma (3.3b) · rol becerileri (3.3c) · ileriye bakan iki kanon (3.3d) · kadronun alt-ajanları (3.3e) · otonom kipin dosyaları (3.3f) · pano (3.4) · kapı (3.5) | — |
+| 6 | **G4** | `adimlar/G4.md` | İlk kutu KABUĞU (sabit metin: `00_genesis/ILK_KUTU_KALIBI.md`) + kilitli-tarih çapası | — |
+| 7 | **G4.5** | `adimlar/G4.5.md` | Aktarım öz-denetimi — SABİT KAPI (`tools/guard/kurulum-denetimi.sh`) | — |
+| 8 | **G5** | `adimlar/G5.md` | Sahip kılavuzu · kokpit · otonom kipin makine ayarı (0c) · kutunun açılış mührü · ÇEKİLME | G5.1 → kutunun |
 
 Madde numaraları bölmeden ETKİLENMEDİ: `G3.2` hâlâ "G3'ün 2. maddesi"dir ve `G3a.md`'de yaşar;
 `G3.3b` `G3b.md`'dedir. Metne yapılan bütün eski atıflar geçerlidir.
 
-**Sırayı sen ezberlemezsin, makine taşır.** Sıranın verisi `00_genesis/adimlar/SIRA.txt`;
+**Sırayı sen ezberlemezsin, makine taşır.** Sıranın verisi `adimlar/SIRA.txt`;
 sürücüsü `tools/guard/kurulum-surucu.sh` (Stop kancası). Sürücü her oturum kapanışında
 `GENESIS_DURUM.md`'nin mekanik bloğunu okur ve **bitmemiş adımla oturumu kapattırmaz**;
 bir adım bitmeden sonrakini de AÇTIRMAZ (sıra atlanırsa durdurur ve düzeltmeyi söyler).

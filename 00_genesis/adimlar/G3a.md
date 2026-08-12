@@ -1,5 +1,5 @@
 <!-- GENESIS ADIM DOSYASI · G3a · Çekirdek yazımı (madde 1-2) — EL_KITABI + bekçi
-     indeks: ../../GENESIS.md · durum: ../GENESIS_DURUM.md · sıra: SIRA.txt
+     indeks: ../GENESIS.md · durum: ../GENESIS_DURUM.md · sıra: SIRA.txt
      Yollar KÖKE göre yazılır (bu dosya 00_genesis/adimlar/ altında yaşar).
      Dosya tavanı 12 KB — ölçen: tools/guard/test/genesis-iskelet.test.mjs
      Madde numaraları KORUNDU: G3.1 · G3.2 burada, G3.3-G3.5 G3b.md'de. Bekçi yazım kuralları ayrı dosyada: 00_genesis/BEKCI_TARIFI.md -->
