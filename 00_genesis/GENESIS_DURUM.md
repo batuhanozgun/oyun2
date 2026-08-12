@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G2
+Adım: G3a
 Durum: bitti
-Tamamlanan: G0, G1
+Tamamlanan: G0, G1, G2
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·
@@ -65,6 +65,21 @@ sahipsiz alan: gerçek uzman görüşü (hiçbir rol kapatamaz — VIZYON §8.1)
 (G3.3f-ii'de doldurulur. Sahip profili sahibe geri okunup onaylandığında buraya satır başında
 "Karar alanı teyidi: <sahip adı> · <tarih>" biçiminde TEK satır yaz. Çekilme kapısı bu satırı
 arar: yoksa KIRMIZI — sahibe hangi sorunun gideceğini kuran ajanın kendi kalemi belirlemiş olur.)
+
+## Bekçi damgası (G3.2)
+Ayar: `kadran=tam` (EL_KITABI kadranıyla eş) · `urun_yollari=04_urun` ·
+`kok_izinli_ek=.DS_Store .obsidian` (proje bir Obsidian kasasının içinde yaşıyor; `.obsidian/`
+ilan edilmeseydi bekçi her koşuda şema-dışı kök girdisi uyarısı basardı — ölçüldü).
+Tavanlar EL_KITABI F3 ile birebir; kalibrasyon ilk retroda.
+
+İlk koşu (2026-08-12):
+`BEKCI v1 durduran=0 kilit=0 uyari=0 bilgi=46 ariza=0 kadran=tam pencere=kurulum`
+
+Fail-closed öz-testi (aynı gün): `kadran=uydurma` ile koşuldu →
+`ARIZA [ayar] bekci.conf: kadran değeri tanınmadı: 'uydurma'` + beş gözün hepsi
+`kapsam: TARANMADI (ayar okunamadı — gözler hiç koşmadı)` + **çıkış kodu 2**.
+Yani bozuk ayar sessiz yeşile değil arızaya düşüyor. Ayar sonra geri alındı ve normal
+makine satırı yeniden basıldı.
 
 ## Format spec (G3b'de doldurulur)
 (henüz yok)
