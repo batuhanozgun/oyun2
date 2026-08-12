@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G4
+Adım: G4.5
 Durum: bitti
-Tamamlanan: G0, G1, G2, G3a, G3b
+Tamamlanan: G0, G1, G2, G3a, G3b, G4
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·
@@ -132,6 +132,24 @@ alanının DIŞINDA bıraktı. Türetme-izi bu paragraftır.
 
 Kabuk sonrası ölçüm: çekilme kapısı **YEŞİL** (56 kalem geçti, 0 kırmızı) ·
 bekçi `durduran=0 kilit=0 uyari=0 ariza=0`.
+
+## G4.5 · aktarım öz-denetimi — YEŞİL damgası
+Koşu: 2026-08-13 · `bash tools/guard/kurulum-denetimi.sh`
+`SONUÇ: YEŞİL — aktarım tam, çekilme serbest` · **56 kalem geçti · 0 KIRMIZI · çıkış kodu 0**
+Yeşil izi düştü: `tools/guard/.kurulum-denetimi-son` (sıra sürücüsü son adımı bu iz olmadan
+yürütmez).
+
+**İLAN EDİLMİŞ SINIR — bu damganın zayıf noktası, örtülmez.** Adım tarifi bu betik için
+"yazmadın, değiştirmezsin; denetleyen ≠ denetlenenin yazarı" diyor. Bu kurulumda betik
+DEĞİŞTİ (K-12, sahip onaylı): U5 kaleminde SIGPIPE/pipefail kusuru vardı ve kapı, kategoriyi
+BULDUĞUNDA kırmızı basıyordu — yani hiçbir kurulum bu kapıdan geçemezdi. Düzeltme yapıldı,
+ama sonuç şu: **bu YEŞİL, betiğine bir kez dokunmuş bir kapıdan alınmıştır.**
+Bunu telafi eden iki bağımsız kanıt var, ikisi de benim kalemimden DEĞİL:
+1. Betiğin kendi test takımı (şablonla gelir, ben yazmadım) düzeltmeden sonra **61/61** geçti —
+   yani ölçünün semantiği korundu.
+2. Değişiklik git'te tek blok hâlinde görünür ve geri alınabilir (`git diff` ile okunur).
+Yine de "denetleyen ≠ denetlenenin yazarı" güvencesi bu kurulumda TAM değildir. İlk retroda
+bu kalem gözden geçirilmeli ve düzeltme KEEL'in kendi bakımına bildirilmelidir.
 
 ## Format spec (G3b'de doldurulur)
 - **PANO:** `tools/kokpit/test/fixtures/tekfaz/` biçimi birebir. `## MEKANİK BLOK` fenced blok —
