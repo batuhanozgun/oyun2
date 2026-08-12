@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G3a
-Durum: bitti
-Tamamlanan: G0, G1, G2
+Adım: G3b
+Durum: bekliyor
+Tamamlanan: G0, G1, G2, G3a
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·
@@ -81,5 +81,62 @@ Fail-closed öz-testi (aynı gün): `kadran=uydurma` ile koşuldu →
 Yani bozuk ayar sessiz yeşile değil arızaya düşüyor. Ayar sonra geri alındı ve normal
 makine satırı yeniden basıldı.
 
+## G3b kanıt damgaları
+
+**G3.3b · koruma katmanı (iki kanıt da ZORUNLU, ikisi de alındı — 2026-08-13):**
+- (i) `.claude/settings.json`a kasıtlı Edit → `PreToolUse:Edit hook error … file-guard ENGEL:
+  bu yol korumalı ([SERT] sınıfı: .claude/)`. Engel görüldü.
+- (ii) `tools/guard/file-guard.sh`ın KENDİSİNE kasıtlı Edit → `file-guard ENGEL: bu yol korumalı
+  ([SERT] sınıfı: tools/guard/)`. Öz-koruma görüldü.
+- `korunan-yollar.txt` DEĞİŞTİRİLMEDİ: kilitli yolu (`02_kanon/kilitli/`) zaten `[SERT]`,
+  golden yolu (`02_kanon/golden/`) zaten `[SORULUR]` — varsayılanlar bu projenin yapısıyla eş.
+- `.claude/settings.json` ask kuralları yerinde: `Edit(/02_kanon/kilitli/**)` ·
+  `Edit(/02_kanon/golden/**)`.
+
+**G3.3c · rol becerileri (üç kanıt):**
+- (i) `grep -R '«' .claude/skills/` BOŞ · 11/11 dosyada `disable-model-invocation: true` ·
+  11/11 dosyanın ilk satırı `---`.
+- (ii) Kafes canlı-kanıtı: `.aktif-rol` = `denetci yazamaz` iken `00_pano/PANO.md`ye Edit
+  denendi → `file-guard ENGEL: rol kafesi: aktif rol 'denetci' YAZAMAZ modundadır` · **exit=2**.
+  Damga aynı komutta kaldırıldı (doğrulandı).
+- (iii) `tools/guard/.aktif-rol` `.gitignore:27`de.
+- **BEKLEYEN KANIT: ilk rol töreni** (insan `/rol-<slug>` yazar → "ROL AÇIK"). Kurulum
+  oturumunda alınamaz — beceriyi ajan tetikleyemez, bu bilinçli. İlk rol oturumunda kapanacak.
+
+**G3.3e · alt-ajan koltukları (dört kanıt):**
+- (i) 11 kadro dosyasında `«` yok. (Şablonla gelen `dogrulayici.md` kendi gösteriminde `«»`
+  kullanıyor — bkz. aşağıdaki KAPI BULGUSU.)
+- (ii) 11/11 dosyanın İLK SATIRI `---`.
+- (iii) `grep -REl '^[[:space:]]*memory[[:space:]]*:' .claude/agents/` BOŞ.
+- (iv) `tools:` değerleri moda göre BİREBİR: yazamaz (denetci, disgoz) → `Read, Grep, Glob` ·
+  tam (9 koltuk) → `Read, Grep, Glob, Edit, Write, Bash`. Her koltuğun ROL.md `Mod:` değeriyle
+  eşleştiği tek tek doğrulandı. Boylar 2128–2200 B (tavan 2816 B).
+
 ## Format spec (G3b'de doldurulur)
-(henüz yok)
+- **PANO:** `tools/kokpit/test/fixtures/tekfaz/` biçimi birebir. `## MEKANİK BLOK` fenced blok —
+  yazarı YALNIZ bekçi; `## YARGI BLOĞU` — yazarı koordinatör.
+- **Işık adları:** bekçinin ürettikleri (`AKIŞ` · `DOSYA`; davranış ölçümü kutu kapanınca doğar).
+  Ciddiyet sözlüğü: `YEŞİL` · `SARI` · `KIRMIZI` · `VERİ-YOK`.
+- **ID önekleri:** kutu `KT-` · görev `G-` · karar `K-` · rol kararı `Ç-`.
+- **Rol durumu:** ilk satır `# DURUM — <Ad>` (em-dash, çevresinde boşluk); boş rol gövdesi
+  birebir `Henüz oturum açılmadı`. `**Son oturum:**` satırı YAZILMADI (o, oturum açmış rol için).
+- **Ayıraçlar:** alan ` · ` (U+00B7) · durum ` — ` (U+2014). ASCII'ye normalize edilmez.
+- **Rol slug'ları:** tek-token ASCII (`^[a-z0-9]+$`); insan-görünümü Türkçe adlar dosya İÇİNDE.
+- **Yazım sırası (load-bearing):** önce diğer rol DURUM'ları → sonra `koordinator/DURUM.md`
+  (rol dosyaları arasında en yeni) → EN SON bekçi. Bu sırayla üretildi.
+- **Doğrulandı (2026-08-13):** kokpit `buildState` ile okundu → **okuma notu 0 · boşluk 0**,
+  11 rolün hepsi "Henüz oturum açılmadı" olarak görülüyor. Bekçi: `durduran=0 uyari=0 ariza=0`.
+
+## KAPI BULGUSU — çekilme kapısında şablon kaynaklı kusur (G3b'de ölçüldü)
+`tools/guard/kurulum-denetimi.sh` (satır 7 `set -euo pipefail`; satır 420-424, "U5" kalemi)
+bekçi kategorilerinin kodda karşılığını şu boru hattıyla arıyor:
+`grep -rl … | while read f; do … && echo VAR; done | grep -q VAR`.
+`grep -q` ilk eşleşmede çıkıyor, boruyu kapatıyor; yukarıdaki `while` SIGPIPE alıp **141** ile
+ölüyor ve `pipefail` yüzünden hattın tamamı BAŞARISIZ sayılıyor. Yani kategori BULUNDUĞUNDA
+kırmızı basıyor. Ölçüldü: aynı ifade `pipefail` kapalıyken 0, açıkken 141 dönüyor.
+Fixture'da yakalanmamasının sebebi mekanik: test sahte bekçiyi TEK dosyayla kuruyor, tek
+eşleşmede `grep -q` girdiyi tüketip bitiriyor ve SIGPIPE doğmuyor. Gerçek kurulumda
+`tools/bekci` altında 9 dosya eşleşiyor.
+**Sonuç: beş kategori de KIRMIZI → G4.5 çekilme kapısı bu hâliyle asla yeşile dönemez.**
+Düzeltme `tools/guard/` içinde, yani `[SERT]` — kuran ajan dokunamaz; sahip kararı + tören ister.
+Sahibe getirildi: 2026-08-13.
