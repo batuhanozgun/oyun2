@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G1
+Adım: G2
 Durum: bitti
-Tamamlanan: G0
+Tamamlanan: G0, G1
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·
@@ -53,6 +53,13 @@ en iyiyi bulmak için akıl koyup tartışan bir ekip — ben bunları tek baş�
 kadran: **ritüel tam · kadro GENİŞ · sahibe giden soru trafiği DAR.** Üçü birlikte tutarlıdır:
 roller kendi aralarında tartışır, sahip yalnız süzülmüş çatallarda konuşur.
 Sahip ritmi: haftada 3 gün × ~30 dk (≈1,5 saat/hafta) — G2 kadrosu bu bütçeye göre tasarlanır.
+
+**G2.5 · Ahmet · 2026-08-12 — KADRO MÜHÜRLENDİ** ("Evet bu kadro uygun."). Tanıtım tablosu
+gösterilerek onaylandı; mühürlü hâl `02_kanon/KADRO.md`. On bir koltuk: urun · koordinator ·
+oyuntasarim · icerik · pedagoji · guvenlik · tasarim · gelistirici · denetci(yazamaz) ·
+disgoz(yazamaz, zorunlu) · yayin(uyuyan). Sahibe kırmızı olarak gösterilip kabul edilen üç
+sahipsiz alan: gerçek uzman görüşü (hiçbir rol kapatamaz — VIZYON §8.1) · ticaret/mağaza
+(yayin uyanana dek) · duyurma/pazarlama (kısmen).
 
 ## Karar alanı teyidi
 (G3.3f-ii'de doldurulur. Sahip profili sahibe geri okunup onaylandığında buraya satır başında
