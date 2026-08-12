@@ -65,7 +65,7 @@ günceller (`03_roller/<slug>/ROL.md`) — GENESIS oraya "ilk kutuda güncellene
 BİTİŞ HÂLİ: dört ortak çıktı yazılı ve sahibe okunmuş
 KANIT:      demo: dört dosya sahibe açılıp okunur · `02_kanon/BITTI_TANIMI.md` ile `02_kanon/KUTU_PLANI.md` iskelet olmaktan çıkmıştır
 KISIT:      ürün kodu yazılmaz · `02_kanon/kilitli/` ve `02_kanon/golden/` içeriğine dokunulmaz · yeni arşiv/klasör düzeni icat edilmez (kayıt düzeni MEVCUT dosyaları adresler)
-BÜTÇE:      dönem başına en çok 6 ÜRETİM çağrısı · ilerleme-yok eşiği 2 tur · toplam dönem tavanı 6
+BÜTÇE:      dönem başına en çok 12 ÜRETİM çağrısı · ilerleme-yok eşiği 2 tur · toplam dönem tavanı 6
 LİSTE:      dönem içinde doğar — bu kutunun görev listesini G-01 üretir (planlama kutusu)
 İZİN:       kutu-ciktilari
 

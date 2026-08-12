@@ -3,12 +3,11 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 01:40 (denetim #5)
-Işıklar: AKIŞ=VERİ-YOK · DOSYA=YEŞİL
-Görevler: —
+Son denetim: 2026-08-13 01:45 (denetim #7)
+Işıklar: AKIŞ=YEŞİL · DOSYA=YEŞİL
+Görevler: G-01=açık
 Sahipte bekleyen: 0
 Sıra: sahip
-Durak: insan girdisi bekleniyor (D9)
 Kırmızı: 0 · Sarı: 0
 ```
 

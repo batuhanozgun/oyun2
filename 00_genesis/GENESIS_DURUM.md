@@ -25,7 +25,7 @@
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
 Adım: G4
-Durum: açık
+Durum: bitti
 Tamamlanan: G0, G1, G2, G3a, G3b
 ```
 
@@ -111,6 +111,27 @@ makine satırı yeniden basıldı.
 - (iv) `tools:` değerleri moda göre BİREBİR: yazamaz (denetci, disgoz) → `Read, Grep, Glob` ·
   tam (9 koltuk) → `Read, Grep, Glob, Edit, Write, Bash`. Her koltuğun ROL.md `Mod:` değeriyle
   eşleştiği tek tek doğrulandı. Boylar 2128–2200 B (tavan 2816 B).
+
+## G4 · ilk kutu kabuğu + bütçe uyarlaması
+Kabuk `01_kutular/KT-001-proje-plani/KUTU.md` kalıptan kopyalandı; tek alan (`koordinator`)
+dolduruldu, metne EKLEME/ÇIKARMA yapılmadı. Taban ref: `8924019` ·
+kilitli-tarih çapası `02_kanon/kilitli/.taban-ref` (41 bayt: 40 hash + satır sonu).
+
+**TEK DEĞER DEĞİŞTİ — `BÜTÇE` satırındaki ilk sayı: 6 → 12.** Sebep mekanik ve kapı zorunlu
+kıldı: kabuğun bütçesi SABİT metindir (6), planlama kutusunun görev sayısı ise kadronun
+TÜREVİDİR (G-01 + yazamaz-olmayan her role bir görev). Bu kurulumda yazamaz-olmayan koltuk
+sayısı 9 → gereken üretim çağrısı 10. 6 ile kutu **mekanik olarak bitirilemezdi**: 7. sevk
+bütçeye takılır, dönem erken döner, ne dış göz brifingi ne kapanış karnesi üretilir — kutu
+sessizce ölür. Kapı bunu KIRMIZI bastı ve haklıydı.
+**Neden 10 değil 12:** 10 sıfır paylı asgari sayıdır; tek bir yeniden deneme kutuyu kilitler.
+Kabuğun kendi `ilerleme-yok eşiği 2 tur` ilanı yeniden denemeyi zaten öngörüyor — pay o ilandan
+türetildi, uydurulmadı. `toplam dönem tavanı` (6) DEĞİŞMEDİ: o dönem sayısıdır, çağrı değil.
+Bu karar sahibe TAŞINMADI ve sebebi yazılı: `02_kanon/KARAR_ALANI.md` Bölüm B, sahip
+"işlerin sırası ve dağılımı" ile "kutunun içi nasıl işliyor" sınıflarını açıkça kendi karar
+alanının DIŞINDA bıraktı. Türetme-izi bu paragraftır.
+
+Kabuk sonrası ölçüm: çekilme kapısı **YEŞİL** (56 kalem geçti, 0 kırmızı) ·
+bekçi `durduran=0 kilit=0 uyari=0 ariza=0`.
 
 ## Format spec (G3b'de doldurulur)
 - **PANO:** `tools/kokpit/test/fixtures/tekfaz/` biçimi birebir. `## MEKANİK BLOK` fenced blok —

@@ -1,13 +1,9 @@
 <!-- yazar: bekci-betigi — elle dokunma -->
-# SAGLIK — son denetim: 2026-08-13 01:40 (denetim #5)
+# SAGLIK — son denetim: 2026-08-13 01:45 (denetim #7)
 
-**Işıklar:** AKIŞ=VERİ-YOK · DOSYA=YEŞİL
+**Işıklar:** AKIŞ=YEŞİL · DOSYA=YEŞİL
 
 ## Kalemler
-- [i] [tavan] tavan-asimi: SAGLIK 4002B > 1,5x esik 3072B — kutu kapanisi kilitli
-- [i] [şema] bos-backlog: aktif kutu yok — insan girdisi bekleniyor (D9)
-- [i] [koruma-hattı] korunan-yol-kirliligi: [SORULUR] yolda commit-dışı değişim (meşru olabilir; sahibe not): 00_genesis/GENESIS_DURUM.md
-- [i] [koruma-hattı] kilitli-tarih: taban-ref henüz yok (G4'te doğar)
 - [i] [golden-tazelik] golden-tazeligi: golden henüz yok/boş — kanon-fakir, içerik denetimi kutu kapanışında (EL_KITABI_KALIBI kanon-fakir esnemesi)
 - [i] [tavan] kapsam: tarandı
 - [i] [şema] kapsam: tarandı
