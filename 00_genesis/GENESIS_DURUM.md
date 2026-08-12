@@ -24,9 +24,9 @@
 
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
-Adım: G0
+Adım: G1
 Durum: bitti
-Tamamlanan: —
+Tamamlanan: G0
 ```
 
 `Adım` = açık adımın kimliği (`00_genesis/adimlar/SIRA.txt`) · `Durum` = **başlamadı** ·
@@ -46,6 +46,13 @@ rejimi + mağaza çocuk kategorisi kuralları) ve G1'de kısıt olarak yazılaca
 (13 altı/üstü kırılması) G1'de sorulacak — AÇIK SORU.
 Kadran kararı: **ritüel tam, kadro yalın** — bağımsız doğrulama ve çocuğa dokunan her şey için
 ayrı kapı KALIR; roller birleştirilir, çok aşamalı komite kurulmaz.
+
+**REVİZYON · G1 · Ahmet · 2026-08-12 — kadran kararının ikinci yarısı sahip tarafından ters
+çevrildi.** Sahip açıkça geniş kadro istedi: "sadece oyunu yazan değil, içeriğini de düşünen,
+en iyiyi bulmak için akıl koyup tartışan bir ekip — ben bunları tek başıma yapamam." Yürürlükteki
+kadran: **ritüel tam · kadro GENİŞ · sahibe giden soru trafiği DAR.** Üçü birlikte tutarlıdır:
+roller kendi aralarında tartışır, sahip yalnız süzülmüş çatallarda konuşur.
+Sahip ritmi: haftada 3 gün × ~30 dk (≈1,5 saat/hafta) — G2 kadrosu bu bütçeye göre tasarlanır.
 
 ## Karar alanı teyidi
 (G3.3f-ii'de doldurulur. Sahip profili sahibe geri okunup onaylandığında buraya satır başında
