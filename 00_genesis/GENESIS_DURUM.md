@@ -25,7 +25,7 @@
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
 Adım: G3b
-Durum: bekliyor
+Durum: bitti
 Tamamlanan: G0, G1, G2, G3a
 ```
 
@@ -62,9 +62,9 @@ sahipsiz alan: gerçek uzman görüşü (hiçbir rol kapatamaz — VIZYON §8.1)
 (yayin uyanana dek) · duyurma/pazarlama (kısmen).
 
 ## Karar alanı teyidi
-(G3.3f-ii'de doldurulur. Sahip profili sahibe geri okunup onaylandığında buraya satır başında
-"Karar alanı teyidi: <sahip adı> · <tarih>" biçiminde TEK satır yaz. Çekilme kapısı bu satırı
-arar: yoksa KIRMIZI — sahibe hangi sorunun gideceğini kuran ajanın kendi kalemi belirlemiş olur.)
+Karar alanı teyidi: Ahmet · 2026-08-13
+Dört başlık sahibe geri okundu ve onaylandı ("Karar alanı beni doğru anlatıyor, teyit ediyorum").
+Aynı turda K-12'nin ikinci düzeltmesine de veto gelmedi ("itirazım yok, olduğu gibi kalsın").
 
 ## Bekçi damgası (G3.2)
 Ayar: `kadran=tam` (EL_KITABI kadranıyla eş) · `urun_yollari=04_urun` ·
