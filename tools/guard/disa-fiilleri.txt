@@ -1,0 +1,70 @@
+# disa-fiilleri — dışa-giden dikişinin (SOR-DISA) TEK EVİ. VERİ dosyası, kod değil.
+#
+# NEDEN VAR (U58). Gerekçe metni "dışa giden her şey sahip kararıdır" diyordu; liste 11 fiildi
+# ve ölçüldü: 44 adayın 31'i soru AÇMADAN geçiyordu — `nc` · `ftp` · `aws s3 cp` · `osascript` ·
+# `python3 … urlopen` · `telnet` · `dig` dahil. İlan gerçekten genişti, uygulama dardı. Liste
+# ayrıca BEŞ evde elle yazılıydı (dikiş · settings ask · README · tasarı · test) ve hiçbiri
+# ötekini ölçmüyordu. Artık tanım burada; tüketiciler ondan türer, tekrar etmez.
+#
+# BİÇİM
+#   fiil=<ad>
+#       komut KONUMUNDA bu ad geçerse SOR. settings karşılığı TÜRETİLİR: Bash(<ad>:*).
+#       Ölçüm örneği de türetilir: "<ad> deneme".
+#   desen=<ad>:<regex> :: <settings deseni ya da -> :: <örnek komut>
+#       ad eşleşir VE komutun kuyruğu regex'e uyarsa SOR. Adın tek başına sorulması meşru işi
+#       durduracağı için (node · python3 · open her gün koşar) kuyruk şartı zorunludur.
+#       settings alanı `-` ise: bu kalemin harness karşılığı YOKTUR ve bu BEYANLI bir boşluktur
+#       — `Bash(node:*)` her node komutunu sorardı. Çift hattın ikinci teli burada yoktur;
+#       kalemi yalnız bu dikiş tutar.
+#       ALAN AYRACI " :: " — regex `|` taşır, bu yüzden ayraç boru OLAMAZ (ilk yazımda öyleydi
+#       ve `(urlopen` diye yarım bir desen üretip kapıyı fail-closed düşürdü; canlı ölçüldü).
+#       ÖRNEK KOMUT KOŞULMAZ; yalnız dikişe metin olarak verilir (test onu SOR bekler).
+#   SINIR=<cümle>   ilanın sınırı; SOR-DISA gerekçe metnine aynen girer.
+# "#" ile başlayan satır yorumdur. Türkçe harf güvenliği: eşleştirme dönüşümsüz birebirdir.
+
+SINIR=Kapsam BU LİSTEDİR (tools/guard/disa-fiilleri.txt) — listede olmayan bir çıkış yolu bu kapıdan GEÇER; desen-kaçırma (kendi betiğini yazıp koşturmak, base64, parça birleştirme) üç hattın yalnız ilkidir
+
+# ── ağ/aktarım: birincil işi makineden veri çıkarmak ya da uzak oturum açmak ───────────────
+fiil=curl
+fiil=wget
+fiil=ssh
+fiil=scp
+fiil=sftp
+fiil=rsync
+fiil=nc
+fiil=ncat
+fiil=netcat
+fiil=ftp
+fiil=tftp
+fiil=telnet
+
+# ── posta ──────────────────────────────────────────────────────────────────────────────────
+fiil=mail
+fiil=sendmail
+fiil=swaks
+
+# ── bulut/paket/yayın araçları: neredeyse her kullanımı uzak bir servise dokunur ───────────
+fiil=gh
+fiil=aws
+fiil=gcloud
+fiil=az
+fiil=twine
+
+# ── DNS: sorgu aracı, ama DNS sızdırma bilinen bir kanal; SOR ucuz, kaçırmak pahalı ────────
+fiil=dig
+fiil=nslookup
+fiil=host
+
+# ── otomasyon köprüsü: Mail/Messages/Safari sürebilir, tırnak içinden curl koşturabilir ────
+fiil=osascript
+
+# ── ad tek başına yetmez: kuyruk şartı olmadan meşru işi durdururdu ───────────────────────
+desen=git:^push\b :: Bash(git push:*) :: git push origin main
+desen=git:^send-email\b :: Bash(git send-email:*) :: git send-email --to a@b.c 0001.patch
+desen=npm:^publish\b :: Bash(npm publish:*) :: npm publish
+desen=docker:^push\b :: Bash(docker push:*) :: docker push kayit/imge
+desen=kubectl:^cp\b :: Bash(kubectl cp:*) :: kubectl cp dosya pod:/tmp/x
+desen=open:^https?:// :: - :: open https://ornek.test/x
+desen=python3:(urlopen|requests\.|http\.client|socket\.|smtplib) :: - :: python3 -c "import urllib.request as u; u.urlopen(adres)"
+desen=python:(urlopen|requests\.|http\.client|socket\.|smtplib) :: - :: python -c "import smtplib"
+desen=node:(fetch\(|https?\.request|net\.connect|net\.createConnection) :: - :: node -e "fetch(adres)"

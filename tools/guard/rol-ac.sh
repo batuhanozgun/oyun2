@@ -1,0 +1,69 @@
+#!/bin/bash
+# rol-ac — rol açılış töreni kaydı. Meşru tetik: rol-becerisinin (!`…`) ön-işleme satırı,
+# yani fiilen İNSANIN yazdığı /rol-<slug> komutu. Argüman-doğrulamalı ve DAMGA-DEĞİŞTİRMEZ:
+# damga ancak boşken doğar; rol/profil değişimi reddedilir (kafes ancak SAHİP KALDIRINCA değişir) —
+# ajan bunu Bash ile çağırsa bile mevcut kafesi gevşetemez. Slug kuralı GENESIS G3.3c ile
+# AYNIDIR (tek-token a-z0-9) ve rol 03_roller/ altında KAYITLI olmalıdır — uydurma ada damga yok.
+# Kullanım: rol-ac.sh <slug> <yazamaz|tam>   (rolün evi türetilir: 03_roller/<slug>/)
+# Yazdığı: tools/guard/.aktif-rol — 1. satır: "<slug>\t<mod>\t03_roller/<slug>/"
+#   yazamaz profilde 2. SATIR (porcelain dikişi): "porcelain\t<özet>" — kafes Edit/Write'ı
+#   keser ama KABUK yazımını kesmez; bu satır oturum başındaki kirlilik özetidir, kapanış
+#   kancası tekrar alıp karşılaştırır (fark → günlüğe + bekçiye SARI). Damganın kendisi
+#   file-guard'ın damga-dikişiyle korunur (ona dokunan Bash komutu sahibe sorulur).
+# Okuyan: file-guard.sh (yalnız 1. satır) · kapanis.sh (1. + 2. satır) · acilis.sh (kafes satırı).
+# TEMİZLEYEN KANCA YOK — kafes yalnız SAHİBİN AÇIK EYLEMİYLE kalkar (U70, 2026-08-09):
+#   `rm -f tools/guard/.aktif-rol` — file-guard'ın damga-dikişi bu komutu sahibe SORAR.
+#   Eskiden açılış kancası damgayı KOŞULSUZ siliyordu ve aynı depoda açılan ikinci oturum
+#   birincinin kafesini sessizce düşürüyordu (ölçüldü: kafeste exit 2 → ikinci oturumdan sonra
+#   exit 0). Damgayı hangi oturumun bastığını bu ortamda güvenilir biçimde türetmenin yolu YOK:
+#   denenen mekanizma (oturum kimliğini depo-geneli bir işarete yazmak) "en son BAŞLAYAN oturum"a
+#   yaslanıyor ve aynı arızayı geri getiriyordu — hasım turu bunu ölçtü. Bu yüzden otomatik
+#   temizlik tümden kaldırıldı; kafesin açık olduğunu her oturum açılışında acilis.sh söyler.
+#   Fazla kafes işi durdurur, eksik kafes güvenceyi YALANLAR — seçilen yön budur.
+set -euo pipefail
+export LC_ALL=C.UTF-8
+
+KOK="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+DAMGA="$KOK/tools/guard/.aktif-rol"
+SLUG="${1:-}"; MOD="${2:-}"
+
+hata() { printf 'ROL AÇILAMADI: %s\n' "$1" >&2; exit 1; }
+
+case "$SLUG" in ""|*[!a-z0-9]*) hata "slug boş ya da tek-token ASCII değil (izinli: a-z 0-9 — GENESIS G3.3c kuralı). Kullanım: rol-ac.sh <slug> <yazamaz|tam>" ;; esac
+{ [ "$MOD" = "yazamaz" ] || [ "$MOD" = "tam" ]; } || hata "mod 'yazamaz' ya da 'tam' olmalı (gelen: '$MOD')"
+[ -d "$KOK/03_roller/$SLUG" ] || hata "rol tanımsız: 03_roller/$SLUG/ yok — tören yalnız kadrodaki roller için açılır (uydurma ada damga basılmaz)"
+
+EV="03_roller/$SLUG/"
+ISTENEN="$(printf '%s\t%s\t%s' "$SLUG" "$MOD" "$EV")"
+
+# Porcelain dikişi ortak kitaplığı (tek ev — açılış ve kapanış AYNI kodu kullanır).
+# Betiğin YANINDAN okunur (kitaplık aracın parçasıdır, projenin verisi değil).
+# Kitaplık yoksa dikiş SESSİZCE devre dışı kalır (tören ölmez — fail-open); ölümü bekçinin
+# koruma-hattı KIRMIZI basar (çift hat, kanca-ölümü emsali).
+LIB="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/porcelain.sh"
+if [ -r "$LIB" ]; then . "$LIB"; else porcelain_ozet() { printf 'yok'; }; fi
+
+acik_bas() {
+  if [ "$MOD" = "yazamaz" ]; then
+    printf 'ROL AÇIK: %s (mod: yazamaz — dosya-yazma araçları kilitli; kendi klasörün %s hariç, ROL.md sözleşmen istisnanın DIŞINDA)\n' "$SLUG" "$EV"
+  else
+    printf 'ROL AÇIK: %s (mod: tam — dosya koruması [kilitli/golden/guard] yine geçerli)\n' "$SLUG"
+  fi
+}
+
+if [ -f "$DAMGA" ]; then
+  MEVCUT_SATIR="$(head -n1 "$DAMGA")"
+  if [ "$MEVCUT_SATIR" = "$ISTENEN" ]; then acik_bas; exit 0; fi # birebir aynı tören — no-op, damga YENİDEN YAZILMAZ
+  MEVCUT="$(printf '%s' "$MEVCUT_SATIR" | cut -f1)"
+  case "$MEVCUT" in
+    "$SLUG") hata "aynı rol FARKLI profille açılamaz (mevcut damga korunur) — profil değişikliği = kafesi kaldır (rm -f tools/guard/.aktif-rol) + sahip kararı" ;;
+    ""|*[!a-z0-9]*) hata "mevcut damga bozuk ($DAMGA) — üstüne yazılmaz. Çözüm: kafesi kaldır (rm -f tools/guard/.aktif-rol — sahibe sorulur), sonra töreni tekrarla." ;;
+    *) hata "bu depoda '$MEVCUT' rol kafesi zaten açık. Rol değişimi = kafesi KALDIR (rm -f tools/guard/.aktif-rol — sahibe sorulur) + yeni tören (EL_KITABI)." ;;
+  esac
+fi
+
+printf '%s\n' "$ISTENEN" > "$DAMGA"
+if [ "$MOD" = "yazamaz" ]; then
+  printf 'porcelain\t%s\n' "$(porcelain_ozet "$KOK" "$SLUG")" >> "$DAMGA"
+fi
+acik_bas

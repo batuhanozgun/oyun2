@@ -1,0 +1,23 @@
+# risk-satiri — KUTU.md "## Bağımlılık ve risk" satırının BİÇİM tanımının tek evi (VERİ dosyası).
+#
+# NEDEN VAR (U75). Aynı satırı BEŞ ev ayrı katılıkta ayrıştırıyordu ve yasağı fiilen uygulayan
+# TEK kapı en gevşeğiydi: `s.startsWith(gorev + ":")` — kimlikle iki nokta arasına bir boşluk
+# konunca (`G-07 :`) riskli-görev commit yasağı SESSİZCE düşüyordu. Ölçüldü: dört ev "biçimli"
+# derken uygulayıcı kördü; uçtan uca koşuda kapı exit 0 verdi. Dört ev "aynı biçim" diye
+# YAZIYOR, hiçbiri ötekini ölçmüyordu.
+#
+# İKİ LEHÇE ZORUNLUDUR — beş tüketicinin dördü node (JS RegExp), biri bash (POSIX ERE):
+#   JS  : tools/sevk/zarf-bicim-kapisi.sh (UYGULAYICI) · tools/sevk/sevk.sh ·
+#         tools/sevk/kurulum-kapisi.sh · tools/bekci/cekirdek.mjs
+#   ERE : tools/guard/kurulum-denetimi.sh
+# İkisinin AYNI külliyat üzerinde AYNI hükmü verdiğini test ölçer — tek evin ikinci kolu budur.
+# İki lehçe kaçınılmaz; ikisinin eşitliğinin ölçülmemesi kaçınılmaz DEĞİLDİR.
+#
+# YAKALAR (JS): 1=görev · 2=önkoşul metni · 3=risk sınıfı · 4=gerekçe (varsa).
+# GEREKÇE İSTEĞE BAĞLI OKUNUR: zorunluluğu TÜKETİCİNİN POLİTİKASIDIR (kurulum kapısı ve bekçi
+# arar; sevk ile uygulayıcı aramaz). Desen biçimi taşır, politikayı taşımaz — politikayı desene
+# gömmek, gerekçesiz satırı "biçimsiz" sayıp uygulayıcıyı yine kör bırakırdı.
+# Okunamayan/eksik anahtar FAIL-CLOSED: biçimi ölçemeyen tüketici "biçimli" diyemez.
+
+RISK_SATIRI_JS=^\s*(G-\d+)\s*:\s*onkosul=([^·]*)·\s*risk=(düşük|riskli)\b(?:\s*—\s*(.+?))?\s*$
+RISK_SATIRI_ERE=^[[:space:]]*G-[0-9]+[[:space:]]*:[[:space:]]*onkosul=[^·]*·[[:space:]]*risk=(düşük|riskli)([[:space:]]*—[[:space:]]*.+)?[[:space:]]*$

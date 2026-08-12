@@ -1,0 +1,12 @@
+{
+  "name": "keel-kokpit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "KEEL şablonu için salt-okunur yerel kokpit",
+  "scripts": {
+    "start": "node server.mjs",
+    "kokpit": "node server.mjs",
+    "test": "node --test"
+  }
+}

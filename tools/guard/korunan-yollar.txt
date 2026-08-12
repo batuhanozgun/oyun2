@@ -1,0 +1,54 @@
+# korunan-yollar — file-guard.sh'ın okuduğu VERİ dosyası (kod değil).
+# Biçim: satır başına bir yol, proje köküne göre; sondaki "/" = dizin (altındaki her şey).
+# Eşleştirme BİREBİR bayttır — kanca hiçbir büyük/küçük harf dönüşümü yapmaz (Türkçe İ/ı güvenliği);
+# yol, diskin gerçek yazımına çözülerek karşılaştırılır.
+# "#" ile BAŞLAYAN satır yorumdur. Bölümler: [SERT] ve [SORULUR].
+# GENESIS (G3.3b) bu dosyayı projenin kanon/golden yapısına göre günceller;
+# kurulumdan sonra bu dosyanın kendisi de [SERT] korumasındadır (öz-koruma).
+
+[SERT]
+# Kesin engel (exit 2): oturum içinde ASLA değiştirilmez. Meşru ihtiyaç → sahip kararı + tören.
+tools/guard/
+tools/sevk/
+# Bekçi sabit çekirdeği (K1/sıra 9): denetim gövdesi + sarmalayıcı + VERİ evleri (EL_KITABI
+# zorunlu kümesi · görev durum sözlüğü — K5) ŞABLONLA SABİT gelir, kurulum YAZMAZ
+# (sözleşme: tools/bekci/README.md §0). Tek istisna bekci.conf —
+# o [SORULUR] bölümünde; ayrımı file-guard tam-yol istisnasıyla yapar.
+tools/bekci/
+.claude/
+.kurulum-tamam
+# Sürüm künyesi: bu projenin HANGİ KEEL'den doğduğunu söyleyen tek yer. Dağıtımla gelir ve
+# kurulumdan sonra projede kalır; güncelleme töreninin okuyacağı çapa odur.
+# KAPSAM AÇIK YAZILIR (ölçüldü): bu satır Edit/Write hattını kapatır, Bash hattını KAPATMAZ —
+# `rm`, `mv`, `sed -i`, `>` yönlendirmesi bu listeden geçmez ve bu, file-guard'ın genel
+# tasarımıdır, künyeye özel bir boşluk değil. Arka durak bekçidedir: [SERT] bir yolda
+# porcelain satırı DURDURAN basar, yani tahrifat bir sonraki koşuda görünür.
+SURUM.md
+02_kanon/kilitli/
+# Zarf günlüğü (E1): otonom kapıların okuduğu tek veri katmanı — araç katmanında dokunulmaz.
+# Meşru yazım YALNIZ tools/sevk/zarf-ekle.sh iledir (kancalar bash sürecinde koşar, bu engelden geçmez).
+00_pano/zarf-gunlugu.jsonl
+# PANO mekanik bloğunun ALAN LİSTESİ ve ortak okuyucusu (U74). tools/kokpit/ bütün olarak
+# korunmaz — kokpitin proje yüzeyi (config · README) kopyaya özeldir ve normal yaşamında
+# değişir. Ama bu iki dosya [SERT] bekçinin YAZDIĞI bloğu belirler; korumasız kalsalardı
+# kafesteki taraf bekçinin çıktısını değiştirebilirdi. Bir güvencenin çapası, denetlediği
+# tarafın yazamayacağı yerde olur.
+tools/kokpit/pano-alanlari.txt
+tools/kokpit/lib/pano-alanlari.mjs
+
+[SORULUR]
+# Sahibe sorulur (ask): golden güncellemesi meşru olabilir, karar sahibindir.
+02_kanon/golden/
+00_genesis/
+# Bekçinin proje ayarı: tavanlar/ürün yolları projenin normal yaşamında değişir — [SERT] olsaydı
+# kurulumdan sonra hiçbir kanaldan güncellenemezdi (sözleşme §0). Kurulumda serbest (GENESIS doldurur).
+tools/bekci/bekci.conf
+# Otonom kipin kural evi (E1): kurulumda G3.3f kurar; dönem içinde sessizce değiştirilemez.
+02_kanon/OTONOM_DONEM.md
+# Sahibin karar alanı (E3): hangi sorunun sahibe gideceğinin yazılı evi (soru çizgisi + profil).
+# Ajan kendi soru alanını genişletemez/daraltamaz — değişikliği sahibin kararıdır.
+02_kanon/KARAR_ALANI.md
+# İlk kutunun iki ürünü (G3.3d): projenin bitti tanımı + mühürlenmiş kutu planı.
+# İkisi de sahip mührüne bağlıdır; değişiklikleri "neyi çıkardık" satırı ister.
+02_kanon/BITTI_TANIMI.md
+02_kanon/KUTU_PLANI.md

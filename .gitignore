@@ -1,0 +1,79 @@
+.DS_Store
+# Obsidian'ın kasa ayarları — depo Obsidian'da açıldığında doğar; ürünün parçası değil
+# (izlenmezse bekçinin porcelain hattı onu "beklenmeyen dosya" diye SARI basmaz)
+.obsidian/
+# NOT: .kurulum-tamam bilerek İZLENİR (GENESIS onu commit'ler; dış temizlik/git clean
+# kurulum işaretini uçuramasın). Bu yüzden burada yok.
+
+.claude/settings.local.json
+# KEEL'in KENDİ kopyalarının işareti (F1-2b) — DAĞITILMAMASI şart: bir clone'da ya da ZIP'te
+# bulunursa kurulum girişi her yerde durur. İzlenmediği için sahibin indirdiği hiçbir kopyada
+# yoktur; bakımcı kendi makinesinde elle koyar. (Silinen eski kopya-işaretinin tersi: o ÜRÜNLE
+# geliyordu ve iki hâli ayırt edemediği için sahibe cevaplayamayacağı bir soru sordurtuyordu.)
+tools/guard/.keel-kaynak
+# === KUTU-DURUMU-BASLANGIC ====================================================
+# Buradan sonraki YOL satırları KURULU BİR KUTUNUN ürettiği yerel durumdur ve iki şey birden
+# doğrudur: (a) hiçbir depoya girmezler, (b) ŞABLONUN çalışma ağacında BULUNMAZLAR.
+# (b) 2026-08-07'ye kadar hiçbir yerde ölçülmüyordu: şablon ağacında sahibin e-posta adresini
+# taşıyan `tools/sevk/kanal.conf` on gün durdu (U22, 2026-07-28 → 2026-08-07).
+# `tools/guard/sablon-hijyeni.sh` artık BU BLOĞU okur — liste ikinci bir dosyaya KOPYALANMAZ,
+# evi burasıdır; bu bloğa yeni bir yol eklemek onu kapının kapsamına da almak demektir.
+# Blok DIŞINDA kalanlar bilerek dışarıdadır: .DS_Store · .obsidian/ · .claude/ ayarları ·
+# tools/guard/.keel-kaynak (bakımcı işareti — şablonda BULUNMASI gerekir, yokluğu kusurdur).
+# rol töreni damgası — kafes durumu, izlenmez (bekçi koruma-hattı yanlış-KIRMIZI basmasın;
+# damga-güvencesi bekçi değil: file-guard damga-dikişi). U70 (2026-08-09): damga artık OTURUM
+# durumu değildir — hiçbir kanca silmez, kalkışı sahibin açık eylemidir. Bu yüzden bir sonraki
+# oturuma da SARKAR ve sarkması bilinçlidir.
+tools/guard/.aktif-rol
+# kurulum sürücüsünün döngü-fren sayacı (F1-1) — oturum durumu, izlenmez (.aktif-rol emsali).
+# Yalnız "aynı hâlde kaç kez durdurdum" sayısını tutar; kurulumun kendi durumu
+# 00_genesis/GENESIS_DURUM.md'nin makine bloğunda yaşar ve o İZLENİR.
+tools/guard/.kurulum-surucu-durum
+# çekilme kapısının YEŞİL koştuğunun izi (F1-1) — çift hattın ters yönü: sürücü son adımı
+# açarken bunu arar. Makine durumu, izlenmez; kapı KIRMIZI verirse silinir.
+tools/guard/.kurulum-denetimi-son
+# dönem-AÇIK göstergesi (E1) — dönem-durumu, izlenmez (.aktif-rol emsali; yazarı /donem, sileni sevk)
+tools/sevk/.donem-acik
+# izin/bütçe çapası (hasım turu 2026-07-30) — göstergeyle aynı ömür: açılış töreni yazar,
+# kapanış siler. Dönem-durumudur, izlenmez; değerleri kutunun duruş sözleşmesinden ayrıştırılır.
+tools/sevk/.donem-capa
+# DUR işareti (E4) — dönem-durumu; sevkin okuduğu tek satır, izlenmez (dönem-göstergesi emsali)
+tools/sevk/.dur
+# uzaktan cevap çapası (F1-5g) — açık soruların KODUNU ve sahibe giden SEÇENEK METİNLERİNİ
+# taşır: hem sır hem proje verisidir, depoya girmez. Dönem çapasından farkı ÖMRÜ: dönemle
+# ölmez (cevap dönem kapandıktan sonra da gelebilir), kodun kendi ömrüyle ölür.
+# Yıldızlı biçim BİLEREK: atomik yazımın geçici dosyası (.cevap-capa.yeni) çapanın TAM
+# kopyasıdır — kodu ve sahibe giden seçenek metinlerini taşır. Adı tek tek saymak, bir
+# sonraki geçici dosyada aynı sızıntıyı yeniden açardı.
+tools/sevk/.cevap-capa*
+# watchdog kaydı (E5'te doğar) — makineye özel kurulum izi, depoya girmez
+tools/sevk/watchdog-kurulu
+# haber kanalının GERÇEK yapılandırması (E5) — sahibin e-posta adresini taşır, yani kişisel
+# veridir ve hiçbir depoya girmez. Şablonda yalnız kanal.conf.ornek yaşar; kurulu kutuda
+# sahip onu kopyalayıp doldurur. (Parola bu dosyada DEĞİL, Keychain'dedir.)
+tools/sevk/kanal.conf
+# haber kanalının dönem-içi sayacı (gönderim tavanı + olay tekilleştirmesi) — dönem-durumu
+tools/sevk/.haber-durum
+# uzaktan DUR ucu eksik uyarısının dönem izi (U27) — dönem başına BİR bulgu düşsün diye
+# tutulur; 15 dakikada bir tekrarlayan bulgu günlüğü boğar ve boğulan günlük kör eder.
+tools/sevk/.dur-imap-eksik
+# icerik suzgecinin DUSTUGU izi (U39) — makine durumu. Suzgec yeniden kosunca file-guard
+# kendisi siler; kurulum denetimi onu okuyup sahibe soyler (izin tuketicisi vardir).
+tools/guard/.suzgec-dustu
+# watchdog canlılık damgası + hata günlüğü + uyanık-tutma savının PID'i (E5) — makine durumu
+tools/sevk/.nabiz-son
+tools/sevk/.nabiz-hata.log
+tools/sevk/.caffeinate-pid
+# sabah yüzeyi (E5) — her dönemin kendi çıktısı, yerinde yeniden yazılır
+00_pano/SABAH.md
+# kurulum kapısının mekanik raporu (E4) — her kurulum oturumunda sevk yeniden üretir
+00_pano/kurulum-kapisi.txt
+# kapanış karnesinin bulgu işaretçisi (F1-5b) — KIRMIZI karnede sevk yeniden üretir; içeriği
+# karne kaydından mekanik kurulur, kalıcı belge değildir (kurulum-kapisi.txt emsali)
+00_pano/kapanis-bulgulari.txt
+# === KUTU-DURUMU-SON ==========================================================
+# harness worktree'leri (E2) — atılabilir/geçici git worktree'leri; izlenmez ki bekçi porcelain
+# hattı meşru bir riskli-görev worktree'sini [SERT] .claude/ kirliliği sanıp KIRMIZI basmasın
+# (hasım bulgusu). Worktree yazımları zaten file-guard sanal-kök haritasıyla korunur (tool katmanı);
+# porcelain körlüğünün gideri o katman + doğrulanmadan ana ağaca geçmeme kuralıdır.
+.claude/worktrees/

@@ -1,0 +1,26 @@
+# sinif-listesi — içerik süzgecinin ürettiği SINIFLARIN tek evi (VERİ dosyası, kod değil).
+#
+# NEDEN VAR (U68). Kapının aradığı sınıf listesi ÜÇ evde elle yazılıydı ve üçüncüsü sapmıştı:
+# README yedi sınıfın dördünü sayıyordu, iki alt-ajan yönergesi de yalnız TCKN/IBAN/kart
+# arıyordu — biri (çatal denetçisinin 5. kalemi) dönemin ortasında sahibe DIŞARI çıkan metni
+# tarıyor. Hiçbir mekanizma bu üç kopyanın eşitliğini ölçmüyordu. Artık tanım burada:
+#   · süzgeç kendi ürettiği sınıfı BU tabloda arar; tabloda yoksa FAIL-CLOSED durur
+#     (yeni bir desen eklenip tabloya yazılmazsa süzgeç sessizce yeni bir sınıf üretemez)
+#   · file-guard engel metnini bu tablodan KURAR (metin sürüklenemez)
+#   · README · tasarı · alt-ajan yönergeleri listeyi TEKRAR ETMEZ, buraya işaret eder
+#   · test her satırın fiilen üretilebildiğini ölçer (tablodaki her sınıf süzgeçte)
+#
+# Biçim: `<slug>=<insan-okur ad>` — slug süzgecin bastığı jetondur, ad sahibe/ajana görünen
+# addır. `SINIR=` satırı kapsamın SINIRINI taşır ve engel metnine aynen girer: ilan kapsamı
+# adıyla SÖYLER, "her sır" demez (U37 dersi). "#" ile başlayan satır yorumdur.
+# Sıra ÖNEMLİDİR: engel metni bu sırayla kurulur.
+
+SINIR=Kapsam BU LİSTEDİR — liste dışı bir sır bu kapıdan geçer, ona güvenme
+
+tckn=TCKN (çift kontrol-hanesi)
+iban=TR IBAN (mod-97)
+kart=kart numarası (Luhn, 15-16 hane, ilk hane 2-6)
+api-anahtari=API anahtarı (sk- · gh?_ · AKIA · AIza · xox?-)
+jeton=JWT jetonu (üç parçalı eyJ)
+ozel-anahtar=PEM özel anahtar başlığı
+isaret=gerçek-veri işaret listesi (tools/guard/gercek-veri-isaretleri.txt)

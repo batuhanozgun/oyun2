@@ -1,0 +1,72 @@
+# pano-alanlari — PANO MEKANİK BLOĞUNUN alan listesinin tek evi (VERİ dosyası, kod değil).
+#
+# NEDEN VAR (U74). Aynı liste ÜÇ evde elle yazılıydı ve üçü de ayrışmıştı:
+#   YAZAR     tools/bekci/cekirdek.mjs   → SEKİZ satır basıyordu
+#   OKUYUCU   lib/status.mjs             → BEŞİNİ okuyordu
+#   SÖZLEŞME  PANO_SOZLESMESI.md         → bir yerde beş, bir yerde altı sayıyordu
+# İki sonuç ÖLÇÜLDÜ (2026-08-10), tahmin değil:
+#   · `Bekleyen sorular:` ÖLÜ DİZEYDİ — yazar sabit `—` basıyor, tüm ağaçta okuyucusu yok,
+#     sözleşme onu "load-bearing" diye sayıyordu. Bu pakette DÜŞTÜ; aynı olguyu
+#     `Sahipte bekleyen: N` zaten sayıyla taşıyor.
+#   · `Sahipte bekleyen` ve `Durak` satırları silindiğinde kokpit `warnings=[]` dönüyordu:
+#     eksik alan SESSİZ geçiyordu.
+#
+# TANIM ARTIK BURADA:
+#   · yazar bloğu BU SIRAYLA ve BU öneklerle kurar. Listede olmayan alanı basamaz, listedeki
+#     `her` alanını boş bırakamaz — ikisi de fail-closed arızadır (bekçi PANO'yu yazmaz ve
+#     kendi arıza hattından bağırır; sessiz drift yerine görünür durma).
+#   · okuyucu ayrıştırma tablosunu buradan türetir; alanın yokluğunda ne yapacağını
+#     `okuyucu` ve `eksik-hâl` sütunları söyler.
+#   · sözleşme metni listeyi TEKRAR ETMEZ: PANO_SOZLESMESI.md'deki tablo bu dosyadan ÜRETİLİR
+#     ve test bayt-eş ölçer (tek ev dikişi).
+#
+# KAPSAM — adıyla ve sınırıyla (U58 dersi): bu dosya alanların VARLIĞINI, SIRASINI ve satır
+# ÖNEKİNİ taşır. Değerin GRAMERİ tüketicinindir (ör. sayaç satırının `N · Sarı: N` gövdesi,
+# ışık satırının `AD=değer` çiftleri). Politika da tüketicinindir: okuyucu eksik `Sıra`yı
+# `bilinmiyor`a düşürür, yazar hiç düşürmez. Deseni tek eve indirip politikayı da gömmek,
+# tüketicileri yanlış yerde katılaştırırdı (U75 dersi).
+#
+# Biçim: ALAN|<anahtar>|<önek>|<yazar>|<okuyucu>|<eksik-hâl>|<eski-önek>
+#   anahtar    — makine adı; yazarın değer anahtarı, okuyucunun JSON alanı.
+#   önek       — satırın BİREBİR ve KANONİK öneki, iki nokta dâhil. Türkçe İ/ı load-bearing;
+#                ASCII'ye normalize edilmez.
+#   yazar      — `her`     : bekçi her koşuda basar (değer üretemezse ARIZA)
+#                `kosullu` : şartı doğduğunda basar (yoksa satır hiç doğmaz)
+#   okuyucu    — `zorunlu`     : satır yoksa okuma notu (her vault'ta beklenir)
+#                `kurulu`      : satır yoksa okuma notu YALNIZ vault'un KENDİSİ bu dosyayı
+#                                taşıyorsa. Ayrım ÖLÇÜLEBİLİR bir olguya dayanır, bir kimlik
+#                                tahminine değil (U70'in dersi): vault `tools/kokpit/
+#                                pano-alanlari.txt` taşıyorsa panosunu bu tablodan türeyen bir
+#                                yazar yazıyordur ve alan eksikse gerçekten bir şey kaybolmuştur.
+#                                Taşımıyorsa vault ya eski bir kurulumdur ya da bize ait
+#                                değildir (üçüncü kopyanın vault'u — D-05); ona not basmak sahibi
+#                                okuma notlarını görmezden gelmeye eğitirdi.
+#                `istegebagli` : yokluğu sessizdir (yazarı `kosullu` olan alanın tek hâli).
+#   eksik-hâl  — `zorunlu`/`kurulu` alan eksikken notun sınıfı:
+#                `not`    : hüküm kaybolmadı — okuma notu basılır, genel duruma dokunulmaz
+#                `bosluk` : ışık hükmünün parçası kayboldu — genel durum YEŞİL BASAMAZ
+#                `-`      : `istegebagli` alanda kullanılmaz
+#   eski-önek  — geri-uyum yazımı ya da `-`. Dil paketi (2026-07-29) damga satırının yazımını
+#                değiştirdi; eski yazımla yazılmış vault'lar hâlâ okunur (D-02/D-05). İkinci
+#                yazımın koda gömülmesi, listenin ikinci kopyasını geri açardı.
+# "#" ile BAŞLAYAN satır yorumdur. SIRA ÖNEMLİDİR: yazar bloğu bu sırayla kurar.
+
+ALAN|son-denetim|Son denetim:|her|zorunlu|not|Son koşu:
+ALAN|isiklar|Işıklar:|her|zorunlu|bosluk|-
+ALAN|gorevler|Görevler:|her|zorunlu|not|-
+ALAN|sahipte-bekleyen|Sahipte bekleyen:|her|kurulu|not|-
+# `Sıra` OKUYUCUDA İSTEĞE BAĞLIDIR ve bu bilinçli bir geri adımdır (hasım turu, 2026-08-10).
+# İlk yazımda `kurulu` idi ve ölçüldü: kurulu bir vault tools/ ağacını GÜNCELLEDİĞİ anda —
+# yani alan listesini aldığı ama bekçi henüz koşmadığı pencerede — panosunda `Sıra:` satırı
+# olmaz ve sahibin ANA PANELİ "belirsiz, emin olmadan yeni oturum açma"ya düşerdi. Yön
+# fail-safe olsa da bedel yanlış: sahibi durduran bir panel, bir okuma notundan pahalıdır.
+# Satırın yazılmadan kalması YAZAR tarafında zaten fail-closed'dır (`her`); okuyucunun ikinci
+# kez katılaşması yeni bir şey ölçmüyor, yalnız gürültü üretiyordu.
+ALAN|sira|Sıra:|her|istegebagli|-|-
+ALAN|durak|Durak:|kosullu|istegebagli|-|-
+# Sayaç TEK satırdır ve iki sayı taşır: önek `Kırmızı:`, gövde `N · Sarı: N`. İki alana
+# bölmek satırı ikiye ayırırdı — sözleşme (SAGLIK kalem sayılarıyla eşitlik) bu satırı
+# BİRLİKTE okur. Eksik-hâli `bosluk`: satır kaybolduğunda sayaç↔kalem çapraz denetimi de
+# kaybolur, yani bir HÜKÜM parçası düşer. `not` yazılıydı ve ölçüldü (hasım turu 2026-08-10):
+# satırı SİLMEK, yanlış yazmaktan daha yeşil kalıyordu.
+ALAN|sayac|Kırmızı:|her|zorunlu|bosluk|-
