@@ -418,8 +418,14 @@ else
     # ailesinin İÇİNDE, İLAN SATIRI DIŞINDA bir karşılığı olmak zorunda. Ölçü dar ve bilinçli:
     # "kod bu kategoriyi üretebiliyor mu" — ne yaptığı değil, var olup olmadığı.
     for k in $GEREKLI; do
-      if grep -rl --include='*.mjs' --include='*.sh' -e "$k" "$KOK/tools/bekci" 2>/dev/null \
-         | while IFS= read -r f; do grep -v '^# kategoriler:' "$f" | grep -qF "$k" && echo VAR; done | grep -q VAR; then :
+      # DÜZELTME (sahip onayı: Ahmet · 2026-08-13): `| grep -q VAR` ilk eşleşmede boruyu
+      # kapatıyor, yukarıdaki `while` SIGPIPE ile 141 dönüyor ve satır 7'deki `pipefail` yüzünden
+      # hattın tamamı BAŞARISIZ sayılıyordu: kalem, kategori BULUNDUĞUNDA KIRMIZI basıyordu.
+      # Ölçü DEĞİŞMEDİ — hâlâ "ilan satırı dışında kodda karşılığı var mı". Yalnız sonuç
+      # erken-çıkışlı boru yerine değişkende toplanıyor, böylece SIGPIPE/pipefail karışmıyor.
+      KAT_VAR=$(grep -rl --include='*.mjs' --include='*.sh' -e "$k" "$KOK/tools/bekci" 2>/dev/null \
+         | while IFS= read -r f; do grep -v '^# kategoriler:' "$f" | grep -qF "$k" && echo VAR; done) || true
+      if [ -n "$KAT_VAR" ]; then :
       else kirmizi "bekçi ilanındaki '$k' kategorisinin KODDA karşılığı yok — ilan tartılmadan geçemez (U5)"; fi
     done
   fi

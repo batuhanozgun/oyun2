@@ -25,6 +25,7 @@ karar ne kadar yazılıysa sahibe o kadar az soru gider.
 | K-09 | Kadro geniş kurulur; tartışan roller dâhil | sert | `02_kanon/KADRO.md` (sahip mührü 2026-08-12) | VIZYON §9 tohum 8 · G2.5 |
 | K-10 | Hassas konular (ölüm, kayıp, ilk aşk, ergenlik) **ray yazılmadan** içeriğe girmez | sert | yok — tohum | VIZYON §5.6 |
 | K-11 | Sahibin çocuğuna dair hiçbir kişisel bilgi kayda geçmez; gözlem ürüne yazılır, kişiye değil | sert | yok — tohum | VIZYON §7 (sahibin açık talebi) |
+| K-12 | Çekilme kapısındaki U5 kaleminin SIGPIPE/pipefail kusuru düzeltildi; `.claude/agents/dogrulayici.md` içindeki Fransız tırnağı düz tırnağa çevrildi | orta · **sahip onaylı** (Ahmet · 2026-08-13) | yok — gerekçe `00_genesis/GENESIS_DURUM.md` "KAPI BULGUSU" | Kurulumda ölçüldü: kapı, kategoriyi BULDUĞUNDA kırmızı basıyordu; düzeltme sonrası kapının kendi testi 61/61 geçti |
 
 **Durum notu:** K-02…K-08, K-10, K-11 **tohum** kararlardır: yürürlüktedirler ve iş onlara
 uymak zorundadır, ama gövdeleri yoktur ve `kilitli/` altında değildirler. Biri tartışmaya

@@ -1,7 +1,8 @@
 <!-- yazar: koordinator (iskelet: genesis) — karar gövdesi yazarken bu dosyayı KOPYALA,
      02_kanon/kilitli/K-NN-<kisa-ad>.md olarak kaydet, köşeli yer tutucuları doldur, bu yorumu sil.
-     Yer tutucu biçimi bilinçli olarak <...>: kurulum denetimi «...» işaretini "doldurulmamış
-     alan" sayar ve bu dosya kalıcı olarak kanonda yaşayan bir şablondur. -->
+     Yer tutucu biçimi bilinçli olarak <...>: kurulum denetimi Fransız tırnağını "doldurulmamış
+     alan" sayar ve bu dosya kalıcı olarak kanonda yaşayan bir şablondur — o işaret buraya
+     örnek olarak bile yazılmaz (ölçüldü: kapıyı kırmızıya düşürdü, 2026-08-13). -->
 # K-NN — <kararın tek cümlelik adı>
 
 - **Tarih:** <YYYY-AA-GG>

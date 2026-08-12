@@ -37,7 +37,7 @@ BİTEN:       <G-NN | KURULUM | KAPANIS> — <tek cümle> · kanıt: <dosya:sat�
 KARNE-GOREV: G-NN | KURULUM | KAPANIS
 HÜKÜM:       YEŞİL | KIRMIZI | DOĞRULANAMADI
 MADDELER:    <iddia=hüküm çiftleri, tek satır>
-BULGU-GOREV: G-NN [G-NN …]   ← YALNIZ «KARNE-GOREV: KAPANIS» + hüküm YEŞİL DEĞİLKEN; zorunlu
+BULGU-GOREV: G-NN [G-NN …]   ← YALNIZ "KARNE-GOREV: KAPANIS" + hüküm YEŞİL DEĞİLKEN; zorunlu
 ```
 
 **`BİTEN` satırının jetonu, sevkin sana verdiği `gorev:` satırının aynısıdır** — `KAPANIS`

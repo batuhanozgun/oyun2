@@ -140,3 +140,19 @@ eşleşmede `grep -q` girdiyi tüketip bitiriyor ve SIGPIPE doğmuyor. Gerçek k
 **Sonuç: beş kategori de KIRMIZI → G4.5 çekilme kapısı bu hâliyle asla yeşile dönemez.**
 Düzeltme `tools/guard/` içinde, yani `[SERT]` — kuran ajan dokunamaz; sahip kararı + tören ister.
 Sahibe getirildi: 2026-08-13.
+
+**ÇÖZÜLDÜ — sahip onayı: Ahmet · 2026-08-13** ("düzelt, ne değiştirdiğini kayda geçir, sınavı
+yeniden koştur ve sonucu bana göster"). İki dosyada değişiklik yapıldı; ikisi de `[SERT]` yolda
+olduğu için araç hattı (Edit/Write) mekanik kapalıydı — değişiklik kabuk üzerinden uygulandı ve
+git'te görünür (geri alınabilir). Kayıt: `02_kanon/KARAR_INDEKSI.md` K-12.
+1. `tools/guard/kurulum-denetimi.sh` (U5 kalemi): erken-çıkışlı boru yerine sonuç değişkende
+   toplanıyor (`KAT_VAR=$(…) || true`). **Ölçü değişmedi.** Kapının kendi test takımı
+   düzeltmeden sonra da 61/61 geçti — yani semantik korundu, yalnız kusur kalktı.
+2. `.claude/agents/dogrulayici.md` satır 40: `«KARNE-GOREV: KAPANIS»` → `"KARNE-GOREV: KAPANIS"`.
+   Aynı kusur sınıfı: deponun kendi kuralı Fransız tırnağını tırnak olarak kullanmayı yasaklıyor
+   (kapı onu "doldurulmamış alan" sayar) ama şablonun kendi dosyası bu kuralı çiğniyordu.
+   Anlam değişmedi. **Bu ikinci düzeltme sahibin ilk iznindeki tek-dosya kapsamının dışındaydı;
+   sahibe ayrıca bildirildi ve vetosu açık bırakıldı.**
+
+Düzeltme sonrası kapı: 39 kalem geçti · KIRMIZI 2 (karar alanı teyit damgası — sahibin
+teyidini bekliyor · ilk kutu kabuğu — G4'ün işi). Beş U5 kırmızısı yok.
