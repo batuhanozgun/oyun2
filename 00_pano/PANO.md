@@ -3,7 +3,7 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 01:45 (denetim #7)
+Son denetim: 2026-08-13 02:13 (denetim #8)
 Işıklar: AKIŞ=YEŞİL · DOSYA=YEŞİL
 Görevler: G-01=açık
 Sahipte bekleyen: 0

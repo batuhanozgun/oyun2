@@ -25,7 +25,7 @@
 ## KURULUM DURUMU — makine okur (yazan: GENESIS ve kurulum sürücüsü)
 ```
 Adım: G5
-Durum: bekliyor
+Durum: bitti
 Tamamlanan: G0, G1, G2, G3a, G3b, G4, G4.5
 ```
 
@@ -60,6 +60,17 @@ oyuntasarim · icerik · pedagoji · guvenlik · tasarim · gelistirici · denet
 disgoz(yazamaz, zorunlu) · yayin(uyuyan). Sahibe kırmızı olarak gösterilip kabul edilen üç
 sahipsiz alan: gerçek uzman görüşü (hiçbir rol kapatamaz — VIZYON §8.1) · ticaret/mağaza
 (yayin uyanana dek) · duyurma/pazarlama (kısmen).
+
+**G5.1 · Ahmet · 2026-08-13 — İLK KUTUNUN AÇILIŞ MÜHRÜ VERİLDİ.** KT-001-proje-plani açıldı;
+`**Açılış mührü:** Ahmet · 2026-08-13` damgalandı, pano `SIRADAKİ OTURUM: koordinator` der.
+Aynı turda kararlaştırılanlar: çalışma adı **Hayat Oyunu** · haber kanalı Gmail ile KURULDU ·
+uzaktan cevap AÇIK (iki riski birebir söylendikten sonra: kararı posta kutusuna erişen herkes
+verebilir · KEEL yanıtı okuyunca posta okunmuş görünür) · gerçek-veri işaret listesi BOŞ
+bırakıldı (sahip kararı — liste depoya giriyor, çocuğa dair dize yazmak sahibin kendi kuralını
+çiğnerdi; koruma kurala dayanıyor: VIZYON §7 + K-11).
+
+**KURULUM TAMAM — GENESIS ÇEKİLDİ (2026-08-13).** Bundan sonra bu koltuk yoktur; sistem
+`00_pano/PANO.md`nin "SIRADAKİ OTURUM" satırından yürür.
 
 ## Karar alanı teyidi
 Karar alanı teyidi: Ahmet · 2026-08-13

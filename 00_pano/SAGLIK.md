@@ -1,5 +1,5 @@
 <!-- yazar: bekci-betigi — elle dokunma -->
-# SAGLIK — son denetim: 2026-08-13 01:45 (denetim #7)
+# SAGLIK — son denetim: 2026-08-13 02:13 (denetim #8)
 
 **Işıklar:** AKIŞ=YEŞİL · DOSYA=YEŞİL
 
