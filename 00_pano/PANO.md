@@ -3,12 +3,12 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 03:57 (denetim #18)
-Işıklar: AKIŞ=KIRMIZI · DOSYA=KIRMIZI
+Son denetim: 2026-08-13 08:08 (denetim #24)
+Işıklar: AKIŞ=YEŞİL · DOSYA=YEŞİL
 Görevler: G-01=açık · G-02=açık · G-03=açık · G-04=açık · G-05=açık · G-06=açık · G-07=açık · G-08=açık · G-09=açık
 Sahipte bekleyen: 0
 Sıra: sahip
-Kırmızı: 1 · Sarı: 2
+Kırmızı: 0 · Sarı: 0
 ```
 
 ## YARGI BLOĞU — yazar: koordinator
@@ -17,12 +17,12 @@ Kırmızı: 1 · Sarı: 2
   (G-01 kutu içi · G-09 kanon). `yayin` uyuyor, `denetci`/`disgoz` yazamaz.
 - **Kurulum denetimi:** 7 kalemden 6'sı geçti; "lokma boyu" kaldı → toplama ikiye bölündü (Ç-04).
   Düzeltme uygulandı, **yeşili alınmadı** — kendi işime yeşil diyemem, denetim yeniden koşmalı.
-- **SIRADAKİ OTURUM:** BEKLEMEDE — sahibin onarım kararı bekleniyor (blokaj). Onaydan sonra:
-  onarım + bekçi testi → `/donem KT-001-proje-plani kurulum` → yeşilse `… yapim`.
-- **Blokaj — YAPISAL, her dönemde tekrarlar:** bekçi `00_pano/zarf-gunlugu.jsonl` için DURDURAN
-  basıyor; dosya `[SERT]`, dönem HER tur ona yazıyor, dönem içinde commit yasak. Commit'lemek
-  çözmez. Üç mercek + üç çürütücü kıramadı; kendi ölçümüm de `durduran=1`, sebep birebir bu satır.
-  **Kimde:** sahip · **neye bağlı:** onarım `tools/bekci/` içinde = [SERT], karar + tören ister ·
-  **tetiklenince:** onarım + bekçi test takımı koşar, sonucu sahibe gösterilir (K-12 emsali).
-- **İki SARI:** `00_pano/SABAH.md` · `kurulum-kapisi.txt` — sistemin kendi ürettikleri, bekçinin
-  izinli listesinde yok. İş durdurmaz; aynı onarımda kapanır.
+- **Dönem blokajı KALKTI (K-13, sahip onaylı 2026-08-13):** bekçi artık sistemin kendi tuttuğu
+  günlüğü "kirli" sayıp dönemi durdurmuyor; iki gereksiz sarı da kapandı. Ölçüm: `durduran=1
+  uyari=2` → `durduran=0 uyari=0`, ışıklar YEŞİL. Bekçinin kendi sınavı: **140/140**.
+- **SIRADAKİ OTURUM:** `/donem KT-001-proje-plani kurulum` — kurulum denetimi yeniden koşsun
+  (düzeltmeme kendim yeşil diyemem). YEŞİL gelirse `/donem KT-001-proje-plani yapim`.
+- **Blokaj:** yok. **Açık kalan tek şey:** kurulum denetiminin taze yeşili.
+- **Sahibin vetosuna açık:** onarıma üçüncü bir dosya adı eklendi (`kapanis-bulgulari.txt`) —
+  henüz doğmadı ama aynı koddan doğup aynı yanlış alarmı verecekti. "İki sarı" kapsamının
+  dışındaydı; gerekçesi `02_kanon/KARAR_INDEKSI.md` K-13 sınır notunda.

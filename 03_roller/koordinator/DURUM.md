@@ -11,12 +11,10 @@ yeniden YEŞİL ("bagimlilik/risk blogu 9 gorevin hepsini kapsiyor").
 ## Açık kalem
 1. **Kurulum denetimi YENİDEN koşmalı** — karne KIRMIZI'ydı, düzeltme sonrası yeşili alınmadı.
    Kendi düzeltmeme ben yeşil diyemem (K2 öz-karne yasağı).
-2. **Dönem duran kapıda öldü, denetim yüzünden DEĞİL — hüküm: YAPISAL.** Bekçi
-   `00_pano/zarf-gunlugu.jsonl` için DURDURAN basıyor; dosya `[SERT]`, dönem her tur ona yazıyor,
-   dönem içinde commit yasak (file-guard SOR-GIT · OTONOM_DONEM §7). Commit'lemek ÇÖZMEZ.
-   Tetik: `sevk.sh:402` (son karne > son bekci) → her karnede bekçi koşar → `sevk.sh:1008` kapatır.
-   Onarım `tools/bekci/cekirdek.mjs:765` civarına dar istisna — **[SERT], sahip kararı + töreni.**
-   Kuyruğa madde düştü. **Onay gelmeden dönem AÇILMASIN.**
+2. ~~Dönem duran kapısı~~ **KAPANDI** — K-13 (sahip onaylı 2026-08-13). Bekçiye dar istisna
+   eklendi, sınav 140/140, ışıklar YEŞİL (`durduran=0 uyari=0`). Dönem yeniden açılabilir.
+   **Ölçülmeyen:** bir dönemin uçtan uca koştuğu; yalnız duran kapıyı üreten bulgunun kalktığı
+   ölçüldü. Kanıt kurulum evresinde aranacak.
 3. **Ç-02 devri** — ROL.md ek-okuma satırları; öneri tablosu G-01'den, uygulama her rolden.
 4. **Retroya:** KUTU.md tavana yaslandı (10072/10240) · `00_pano/SABAH.md` ve
    `kurulum-kapisi.txt` şema-dışı (iki SARI) · bu dosyanın tavanı üç kez aşıldı.
