@@ -364,7 +364,11 @@ if (conf) {
   });
 
   goz('şema', 'pano-semasi', () => {
-    const izinli = new Set(['PANO.md', 'SAGLIK.md', 'ERTELENENLER.md', 'SENDE_BEKLEYEN.md', 'oturum-gunlugu.jsonl', 'zarf-gunlugu.jsonl', ...conf.pano_izinli_ek]);
+    // Sevkin kendi ürettiği üç 00_pano dosyası (K-13, sahip onaylı 2026-08-13): SABAH.md
+    // (sevk.sh:62) · kurulum-kapisi.txt (sevk.sh:137) · kapanis-bulgulari.txt (KIRMIZI karnede).
+    // Üçü de .gitignore'un KUTU-DURUMU bloğunda "sistemin kendi çıktısı" diye ZATEN tanımlı
+    // (.gitignore:66-73) ama bu göz onları tanımıyordu — iki veri evi arasında sürüklenme.
+    const izinli = new Set(['PANO.md', 'SAGLIK.md', 'ERTELENENLER.md', 'SENDE_BEKLEYEN.md', 'oturum-gunlugu.jsonl', 'zarf-gunlugu.jsonl', 'SABAH.md', 'kurulum-kapisi.txt', 'kapanis-bulgulari.txt', ...conf.pano_izinli_ek]);
     for (const ad of dizin(join(KOK, '00_pano')) || []) {
       if (!izinli.has(ad)) bulgu(dusur('UYARI'), 'şema', 'pano-semasi', '00_pano içinde beklenmeyen girdi: ' + ad);
     }
@@ -763,6 +767,20 @@ if (conf) {
       for (let y of (ham.includes(' -> ') ? ham.split(' -> ') : [ham])) {
         y = y.trim().replace(/^"|"$/g, '');
         if (y.startsWith('.claude/worktrees/')) continue; // meşru riskli-görev worktree'si (E2 notu)
+        // Zarf günlüğü istisnası (K-13, sahip onaylı 2026-08-13). 00_pano/zarf-gunlugu.jsonl İKİ
+        // şeydir aynı anda: [SERT] korunan yol (araç katmanında dokunulmaz) VE otonom dönemin HER
+        // turunda zarf-ekle.sh'ın append ettiği makine günlüğü. Bu göz "commit-dışı = kurcalama"
+        // dediği için dönem, kendi yazdığı satır yüzünden duran kapıya düşüyordu. ÖLÇÜLDÜ:
+        // K20260813-001248 · 00_pano/zarf-gunlugu.jsonl:9 (karne) -> :11 (bekçi KIRMIZI) -> :13
+        // (dönem-kapanış, sebep birebir bu satır). Commit'lemek ÇÖZMEZ: sonraki append yeniden
+        // kirletir; dönem içinde commit ise file-guard.sh:834'te sahip kapısına düşer. Yani sistem
+        // hem kirliliği üretiyordu hem temizliğini yasaklıyordu.
+        // KAPSAM (dar): yalnız BU gözün commit-dışılık ölçümü düşer. Aynen duranlar — Edit/Write
+        // engeli (korunan-yollar.txt:30) · 'şema/zarf-gunlugu' gözünün bozuk-satır DURDURAN'ı ·
+        // 'koruma-hattı/kilitli-tarih' gözü. BEYANLI KAYIP: dosyaya kabuktan yapılan oynama artık
+        // bu gözde görünmez; karşılığı üstteki üç hattır (porcelain.sh:24-25 aynı sınırı zaten
+        // izlenmeyen dosyalar için ilan ediyor).
+        if (y === '00_pano/zarf-gunlugu.jsonl') continue;
         // Bekçi-ayarı istisnası (hasım bulgusu #2, file-guard.sh:439-440 ile AYNI karar):
         // bekci.conf [SORULUR]dur ama tools/bekci/ [SERT] dizininin İÇİNDE yaşar — tam yol,
         // dizin kuralını ezer, karar [SORULUR] kuralına düşer (sözleşme §0 tablosu · §4:
