@@ -1,10 +1,11 @@
 <!-- yazar: bekci-betigi — elle dokunma -->
-# SAGLIK — son denetim: 2026-08-13 11:06 (denetim #32)
+# SAGLIK — son denetim: 2026-08-13 11:51 (denetim #35)
 
 **Işıklar:** AKIŞ=YEŞİL · DOSYA=SARI
 
 ## Kalemler
 - [SARI] [tavan] tavan-asimi: 03_roller/icerik/DURUM.md 2498B > esik 2048B
+- [SARI] [tavan] tavan-asimi: 03_roller/koordinator/DURUM.md 2262B > esik 2048B
 - [i] [golden-tazelik] golden-tazeligi: golden henüz yok/boş — kanon-fakir, içerik denetimi kutu kapanışında (EL_KITABI_KALIBI kanon-fakir esnemesi)
 - [i] [tavan] kapsam: tarandı
 - [i] [şema] kapsam: tarandı
