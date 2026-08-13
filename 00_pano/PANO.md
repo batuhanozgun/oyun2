@@ -13,17 +13,16 @@ Kırmızı: 1 · Sarı: 2
 
 ## YARGI BLOĞU — yazar: koordinator
 - **Aktif kutu:** KT-001 — **AÇIK.** Açılış mührü verildi (Ahmet · 2026-08-13).
-- **Görev listesi DOĞDU + bağımsız denetimden geçti** (2026-08-13): G-02…G-08 yedi görüş
-  (urun · pedagoji · oyuntasarim · guvenlik · icerik · tasarim · gelistirici) + iki toplama
-  (G-01 kutu içi · G-09 kanon). `yayin` uyuyor, `denetci`/`disgoz` yazamaz — görev almadılar.
-- **Kurulum denetimi:** 7 kalemden 6'sı geçti; "lokma boyu" kaldı → toplama ikiye bölündü
-  (Ç-04). Düzeltme uygulandı; **denetimin yeniden koşması gerekiyor** (kendi işime yeşil
-  diyemem).
-- **SIRADAKİ OTURUM:** BEKLEMEDE — dönem yeniden açılmadan önce bir onarım kararı var
-  (aşağıdaki blokaj). Onarımdan sonra: `/donem KT-001-proje-plani kurulum`, yeşil gelirse
-  `/donem KT-001-proje-plani yapim`.
-- **Blokaj:** **dönem kendi günlüğüne takılıyor.** İlk dönem duran kapıda öldü; sebebi denetim
-  değil, bekçinin `00_pano/zarf-gunlugu.jsonl` için bastığı DURDURAN — dosya `[SERT]` korunan
-  yolda ve commit-dışı, ama dönemin her turu ona yazmak zorunda. Kimde: koordinator (inceleme
-  koştu) · neye bağlı: onarımın `tools/` içine düşüp düşmediği · tetiklenince: `tools/` ise
-  sahip kararı + töreni, değilse rol çözer ve dönem yeniden açılır.
+- **Görev listesi doğdu + bağımsız denetimden geçti:** G-02…G-08 yedi görüş + iki toplama
+  (G-01 kutu içi · G-09 kanon). `yayin` uyuyor, `denetci`/`disgoz` yazamaz.
+- **Kurulum denetimi:** 7 kalemden 6'sı geçti; "lokma boyu" kaldı → toplama ikiye bölündü (Ç-04).
+  Düzeltme uygulandı, **yeşili alınmadı** — kendi işime yeşil diyemem, denetim yeniden koşmalı.
+- **SIRADAKİ OTURUM:** BEKLEMEDE — sahibin onarım kararı bekleniyor (blokaj). Onaydan sonra:
+  onarım + bekçi testi → `/donem KT-001-proje-plani kurulum` → yeşilse `… yapim`.
+- **Blokaj — YAPISAL, her dönemde tekrarlar:** bekçi `00_pano/zarf-gunlugu.jsonl` için DURDURAN
+  basıyor; dosya `[SERT]`, dönem HER tur ona yazıyor, dönem içinde commit yasak. Commit'lemek
+  çözmez. Üç mercek + üç çürütücü kıramadı; kendi ölçümüm de `durduran=1`, sebep birebir bu satır.
+  **Kimde:** sahip · **neye bağlı:** onarım `tools/bekci/` içinde = [SERT], karar + tören ister ·
+  **tetiklenince:** onarım + bekçi test takımı koşar, sonucu sahibe gösterilir (K-12 emsali).
+- **İki SARI:** `00_pano/SABAH.md` · `kurulum-kapisi.txt` — sistemin kendi ürettikleri, bekçinin
+  izinli listesinde yok. İş durdurmaz; aynı onarımda kapanır.

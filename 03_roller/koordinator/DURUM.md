@@ -11,21 +11,21 @@ yeniden YEŞİL ("bagimlilik/risk blogu 9 gorevin hepsini kapsiyor").
 ## Açık kalem
 1. **Kurulum denetimi YENİDEN koşmalı** — karne KIRMIZI'ydı, düzeltme sonrası yeşili alınmadı.
    Kendi düzeltmeme ben yeşil diyemem (K2 öz-karne yasağı).
-2. **Dönem duran kapıda öldü, denetim yüzünden DEĞİL:** bekçi `00_pano/zarf-gunlugu.jsonl`
-   için DURDURAN bastı — dosya `[SERT]` korunan yolda ve commit-dışı. Dönemin kendi yazdığı
-   günlük dönemi öldürüyor. Çok-mercekli inceleme koştu; hüküm gelmeden dönem yeniden açılmasın.
+2. **Dönem duran kapıda öldü, denetim yüzünden DEĞİL — hüküm: YAPISAL.** Bekçi
+   `00_pano/zarf-gunlugu.jsonl` için DURDURAN basıyor; dosya `[SERT]`, dönem her tur ona yazıyor,
+   dönem içinde commit yasak (file-guard SOR-GIT · OTONOM_DONEM §7). Commit'lemek ÇÖZMEZ.
+   Tetik: `sevk.sh:402` (son karne > son bekci) → her karnede bekçi koşar → `sevk.sh:1008` kapatır.
+   Onarım `tools/bekci/cekirdek.mjs:765` civarına dar istisna — **[SERT], sahip kararı + töreni.**
+   Kuyruğa madde düştü. **Onay gelmeden dönem AÇILMASIN.**
 3. **Ç-02 devri** — ROL.md ek-okuma satırları; öneri tablosu G-01'den, uygulama her rolden.
-4. **KUTU.md tavana yaslandı** (10072/10240 · pay 168 B). Bir sonraki ekleme SARI yapar;
-   F3'e göre bölünme adayı. İlk retroda ölçülsün.
-5. **İki SARI:** `00_pano/` içinde şema-dışı iki dosya (`SABAH.md` · `kurulum-kapisi.txt`) —
-   dönemin kendi ürettikleri. İş durdurmaz, kapanışta temizlenmeli.
+4. **Retroya:** KUTU.md tavana yaslandı (10072/10240) · `00_pano/SABAH.md` ve
+   `kurulum-kapisi.txt` şema-dışı (iki SARI) · bu dosyanın tavanı üç kez aşıldı.
 
-## Bu oturumun kararları
-Ç-01…Ç-04'ün gövdeleri `01_kutular/KT-001-proje-plani/KUTU.md` planlama notunda (tek ev).
-G-09'un koltuğu koordinatörde bırakıldı: iki kanon dosyasının yazarı o (F1); kapsam koruması
-yazıldı — bitti tanımı G-02'den devşirilir, üretilmez.
+## Kararlar
+Ç-01…Ç-04 gövdeleri `01_kutular/KT-001-proje-plani/KUTU.md` planlama notunda (tek ev). G-09
+koordinatörde kaldı: iki kanon dosyasının yazarı o (F1); bitti tanımı G-02'den devşirilir.
 
 ## Sahibe giden
-Yok. Denetim bulgusu da dönem kapanışı da türetilebilirdi (TÜRETME-İZİ: `02_kanon/KARAR_ALANI.md`
-Bölüm A md. 8 — kutunun iç işleyişi sahibe giden soru sınıfı değil). Zarf günlüğü onarımı
-`tools/` içine düşerse **sahibin kararı + töreni** gerekir; hüküm bekleniyor.
+**1 madde:** bekçi onarım izni. Süzgeci teknik tercih değil, mekanik kapı geçti — `tools/bekci/`
+[SERT], karar + tören olmadan dokunulamaz (K-12 emsali). Planlamanın kendisi türetilebilirdi
+(TÜRETME-İZİ: `02_kanon/KARAR_ALANI.md` Bölüm A md. 8).
