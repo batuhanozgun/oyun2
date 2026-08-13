@@ -29,6 +29,21 @@ karar ne kadar yazılıysa sahibe o kadar az soru gider.
 
 | K-13 | Bekçinin `korunan-yol-kirliligi` gözüne **dar istisna**: `00_pano/zarf-gunlugu.jsonl` commit-dışı olduğu için DURDURAN basılmaz. Aynı törende sevkin ürettiği üç `00_pano` dosyası (`SABAH.md` · `kurulum-kapisi.txt` · `kapanis-bulgulari.txt`) pano şema kümesine eklendi | orta · **sahip onaylı** (Ahmet · 2026-08-13) | yok — gerekçe `tools/bekci/cekirdek.mjs` içindeki iki yorum bloğu + commit gövdesi | Ölçüldü: dönem K20260813-001248 kendi yazdığı günlük yüzünden duran kapıya düştü (`00_pano/zarf-gunlugu.jsonl:9→11→13`). Üç bağımsız mercek + her birine ayrı çürütücü koştu; beş kaçış hattı denendi, hüküm kırılamadı. Düzeltme sonrası bekçinin kendi sınavı **140/140** |
 
+| K-14 | **Defteri yapı kapatır:** SubagentStop biçim kapısı, üretim sınıfı bir dönüş zarfı geçtiğinde `KUTU.md` görev tablosunda o satırın `Durum` hücresini `kapalı`, `Kanıt` hücresini zarfın kanıt işaretçisi yapar. Dış göz brifingi emsalinin ikinci uygulaması ("koltuk yazamaz, diske kapı yazar") | orta · **sahip onaylı** (Ahmet · 2026-08-13: "Defteri ben kapatmayım, sistem kapasın") | yok — gerekçe `tools/sevk/zarf-bicim-kapisi.sh` K-14 yorum bloğu + commit gövdesi | Ölçüldü: dönem K20260813-055545'te yedi görevin yedisi de koştu ve döndü, yedi satır `açık` kaldı, dönem duran kapıya düştü |
+
+**K-14'ün ilan edilmiş sınırları.** (1) **Dar tutuldu, altı fren fail-closed:** yalnız `uretim`
+sınıfı · yalnız ÇATAL boşken · satırın Sahip hücresi dönen koltukla eşleşmeli · satır `açık`
+olmalı · tabloda tam bir eşleşme yoksa yazılmaz · sembolik bağ reddedilir. Her atlama zarf
+kaydına `defter` alanı olarak düşer — sessiz atlama yok. (2) **K2 bozulmaz, GÜÇLENİR:** satır
+`kapalı` olduğu an sevk o görev için bağımsız doğrulayıcı sevk eder; önceden satır hiç
+kapanmadığı için o karne HİÇ istenmiyordu. (3) **ÖLÇÜLMEDİ:** yeni kod yolunun canlı çalıştığı
+doğrulanamadı — kanca betiklerini elle çağırmak file-guard'da ENGEL (haklı olarak; etrafından
+dolaşılmadı). Kanıt bir sonraki dönemde aranacak: G-01 dönünce satırı kendiliğinden kapanmalı.
+(4) **Sınav bu kurulumda 47 kırmızıyla geliyor ve bu K-14'ten ÖNCE de böyleydi** — taban ile
+değişiklik koşusu birebir aynı (393 geçti · 47 kaldı, kalan testlerin listesi bayt bayt aynı).
+Kırmızılar KEEL'in kendi kurulum testleri: dağıtılan kopyada şablon kaynağı olmadığı için
+fixture kurulamıyor. Ayrı bulgu, şablonun bakımına ait.
+
 **K-13'ün ilan edilmiş sınırları.** (1) Kaybedilen güvence beyanlıdır: zarf günlüğüne **kabukla**
 yapılan oynama artık bu gözde görünmez; karşılığı üç ayrı hattır (Edit/Write engeli · `şema/zarf-gunlugu`
 bozuk-satır DURDURAN'ı · `kilitli-tarih` gözü). (2) Sahibin izni "iki sarı" dedi; **üçüncü dosyayı

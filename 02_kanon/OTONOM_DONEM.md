@@ -110,6 +110,14 @@ GERİ-ÇEKİLEN: yok | <dönem içinde açılıp geri çekilen çatal/karar — 
 
 - **SEÇENEKLER:** yazılırsa 2-4 seçenek, sahip dilinde. **Yokluğu red sebebi değildir** — o
   çatal klavye-yalnız kalır.
+- **Defteri kapı kapatır (K-14, sahip onaylı 2026-08-13).** Üretim sınıfı bir zarf biçim
+  kapısından geçtiğinde, kapı `KUTU.md` görev tablosunda o satırın `Durum` hücresini `kapalı`,
+  `Kanıt` hücresini zarfın kanıt işaretçisi yapar. Bu **F1'in üçüncü istisnasıdır** (ilk ikisi:
+  PANO'nun iki bloğu · `SENDE_BEKLEYEN`): tablonun yazar-kimliği koordinatörde kalır, ama
+  `açık→kapalı` edimini yapı basar — çünkü rol kendi satırını kapatamaz (F1) ve sevk görev
+  kapatmaz (§11), yani edim başka türlü sahipsizdi. Dış göz brifingiyle aynı desen: koltuk
+  yazamaz, diske kapı yazar. **K2 bozulmaz:** satır kapandığı an sevk o görev için bağımsız
+  doğrulayıcı sevk eder — kapı kapatır, karne doğrular.
 - **Koşullu 7. satır — İZİN-ENGELİ:** izin engeli yaşandıysa (§2 İZİN) zarfa
   `İZİN-ENGELİ: <ne engellendi>` yazılır; kapı bunu transkriptten ÇİFT kaynakla doğrular —
   yaşanmışken yazılmamış zarf geri döner. Engellenen adım ATLANIR; iş durmaz.

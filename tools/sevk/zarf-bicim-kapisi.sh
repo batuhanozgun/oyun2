@@ -863,6 +863,64 @@ if (gozlemciMi) {
 }
 // ═══ F1-5c sonu ═════════════════════════════════════════════════════════════════════════
 
+// ═══ K-14 · DEFTER KAPAMA (üretim sınıfı) · sahip onaylı 2026-08-13 ═════════════════════
+// NEDEN VAR. Bir görevin Durum hücresini «açık»tan «kapalı»ya çeviren edim üç ayrı yere
+// atfedilmişti ve ÜÇÜ DE uygulanamazdı: .claude/agents/dogrulayici.md:48 «görevi bu satır
+// kapatır» der ama o koltuğun yazma aracı YOKTUR (:4) · sevk.sh:880 satırı ROLDEN bekler ama
+// hiçbir rol sözleşmesi bunu söylemez, F1 (KUTU.md yazarı koordinatördür) tersini der ·
+// 11 koltuk dosyasının K2 işaretçisi yanlış bölüme gösterir. Sonuç ÖLÇÜLDÜ (dönem
+// K20260813-055545): yedi görüşün yedisi de koştu, döndü ve dosyasını yazdı; yedi satır
+// «açık» kaldı; sevk aynı işi ikinci kez yaptırmadı ve dönem duran kapıya düştü.
+// EMSAL. Bu kapı zaten «koltuk yazamaz, diske BU KAPI yazar» desenini uyguluyor (F1-5c dış
+// göz brifingi, yukarıda; kanon izni OTONOM_DONEM §11). Defter aynı desenin ikinci uygulaması.
+// K2 BOZULMAZ, GÜÇLENİR: satır «kapalı» olduğu an sevk.sh:827-843 o görev için doğrulayıcı
+// sevk eder. Önceden satır hiç kapanmadığı için o bağımsız karne HİÇ istenmiyordu.
+// SINIRLAR (dar tutuldu — hepsi fail-closed):
+//   · yalnız `uretim` sınıfı; karneci/denetci/gözlemci dönüşü defter yazmaz
+//   · yalnız ÇATAL boşken — açık çatalı olan görev BİTMİŞ değildir
+//   · satırın Sahip hücresi dönen koltukla EŞLEŞMELİ (bir rol başkasının satırını kapatamaz)
+//   · satır `açık` olmalı; `kapalı`/`pas`/`mühür-bekliyor` satıra DOKUNULMAZ
+//   · tam bir eşleşme yoksa (0 ya da 2+) yazılmaz, iz düşer
+//   · sembolik bağ/gerçek-olmayan dosya reddedilir (F1-5c bloğundaki aynı tuzak: `ln -s` hiçbir
+//     yazım dikişinde değildir ve bu kapı araç katmanından geçmez)
+let defterKaydi = null;
+if (!gozlemciMi && !karneciMi && !denetciMi && KUTU && gorev && /^G-\d+$/.test(gorev)) {
+  const kutuYol = join(KOK, "01_kutular", KUTU, "KUTU.md");
+  const neden = (n) => { defterKaydi = { tip: "defter", ajan: tipHam, gorev, sonuc: "atlandi", sebep: n }; };
+  if (!catalYok) neden("catal acik — gorev bitmis sayilmaz");
+  else {
+    try {
+      const st = lstatSync(kutuYol);
+      if (st.isSymbolicLink() || !st.isFile()) neden("kutu yolu gercek dosya degil (bag/dizin)");
+      else {
+        const satirlar = readFileSync(kutuYol, "utf8").split("\n");
+        const bulunan = [];
+        for (let i = 0; i < satirlar.length; i++) {
+          if (!/^\s*\|/.test(satirlar[i])) continue;
+          const h = satirlar[i].split("|");
+          if (h.length < 7) continue;
+          if (h[1].trim() === gorev) bulunan.push(i);
+        }
+        if (bulunan.length !== 1) neden("tabloda " + bulunan.length + " eslesme (1 bekleniyor)");
+        else {
+          const i = bulunan[0];
+          const h = satirlar[i].split("|");
+          if (h[3].trim() !== tipHam) neden("satirin sahibi " + h[3].trim() + ", donen koltuk " + tipHam);
+          else if (h[4].trim() !== "açık") neden("satir zaten " + h[4].trim());
+          else {
+            h[4] = " kapalı ";
+            h[5] = " " + kanit + " ";
+            satirlar[i] = h.join("|");
+            writeFileSync(kutuYol, satirlar.join("\n"));
+            defterKaydi = { tip: "defter", ajan: tipHam, gorev, sonuc: "kapatildi", kanit, yol: "01_kutular/" + KUTU + "/KUTU.md" };
+          }
+        }
+      }
+    } catch (e) { neden("okuma/yazma hatasi: " + String(e && e.message).slice(0, 80)); }
+  }
+}
+// ═══ K-14 sonu ══════════════════════════════════════════════════════════════════════════
+
 // Talimat↔fiil dikişi (DÖNÜŞ ucu; çağrı ucu E4te devir-kapisi.sh): günlükte sevk-karar kaydi
 // varsa zarfin gorevi o kümede aranir; küme BOSSA atlanir. Sapma ENGELLEMEZ: kirmizi iz düşer,
 // duran kapiya çevirmek sevkin Stop-turu isidir.
@@ -908,7 +966,7 @@ kayit({
     // sahip yüzeyine giden hiçbir cümle iki ayrı yerde kurulmaz (§9 + D-02).
     secenekler: alan["SEÇENEKLER"] || null,
   },
-  dikis, ham: (metin || "").slice(0, 4000),
+  dikis, defter: defterKaydi, ham: (metin || "").slice(0, 4000),
 });
 // Karne kaydi ZARFTAN SONRA duser: tazelik "karne indeksi > son is-zarfi indeksi" ile olculur;
 // sira tersine donerse kendi zarfi karneyi bayat gosterirdi. Brifing kaydi da ayni sirada:
