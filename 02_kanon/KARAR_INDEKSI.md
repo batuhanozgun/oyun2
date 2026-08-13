@@ -33,8 +33,9 @@ karar ne kadar yazılıysa sahibe o kadar az soru gider.
 yapılan oynama artık bu gözde görünmez; karşılığı üç ayrı hattır (Edit/Write engeli · `şema/zarf-gunlugu`
 bozuk-satır DURDURAN'ı · `kilitli-tarih` gözü). (2) Sahibin izni "iki sarı" dedi; **üçüncü dosyayı
 (`kapanis-bulgulari.txt`) ben ekledim** — henüz doğmamış ama aynı koddan doğacak ve aynı yanlış alarmı
-verecekti (`.gitignore:71-73` onu zaten sistemin çıktısı sayıyor). Kapsam dışıydı, **vetosu açıktır**
-(K-12'nin ikinci dosya emsali). (3) Bu kusur KEEL şablonundan geldi, bu kuruluma özel değil —
+verecekti (`.gitignore:71-73` onu zaten sistemin çıktısı sayıyor). Kapsam dışıydı, sahibe ayrıca
+bildirildi; **veto penceresi KAPANDI — Ahmet · 2026-08-13: "itirazım yok, üçüncü dosya kalsın."**
+(K-12'nin ikinci dosya emsali.) (3) Bu kusur KEEL şablonundan geldi, bu kuruluma özel değil —
 şablonun bakımına bildirilmeli (K-12 ile aynı kuyruk). (4) Kayıt yeri gerilimi: koordinatörün
 yazma beyaz-listesi `02_kanon/`u kapsamıyor ama bu dosyanın yazarı koordinatördür (F1) — sözleşme
 ile dosya kimliği çelişiyor, ilk retroya.
