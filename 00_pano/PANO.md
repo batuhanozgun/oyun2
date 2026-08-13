@@ -3,26 +3,27 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 08:08 (denetim #24)
-Işıklar: AKIŞ=YEŞİL · DOSYA=YEŞİL
-Görevler: G-01=açık · G-02=açık · G-03=açık · G-04=açık · G-05=açık · G-06=açık · G-07=açık · G-08=açık · G-09=açık
-Sahipte bekleyen: 0
+Son denetim: 2026-08-13 11:03 (denetim #31)
+Işıklar: AKIŞ=YEŞİL · DOSYA=SARI
+Görevler: G-01=açık · G-02=kapalı · G-03=kapalı · G-04=kapalı · G-05=kapalı · G-06=kapalı · G-07=kapalı · G-08=kapalı · G-09=açık
+Sahipte bekleyen: 4
 Sıra: sahip
-Kırmızı: 0 · Sarı: 0
+Kırmızı: 0 · Sarı: 1
 ```
 
 ## YARGI BLOĞU — yazar: koordinator
-- **Aktif kutu:** KT-001 — **AÇIK.** Açılış mührü verildi (Ahmet · 2026-08-13).
-- **Görev listesi doğdu + bağımsız denetimden geçti:** G-02…G-08 yedi görüş + iki toplama
-  (G-01 kutu içi · G-09 kanon). `yayin` uyuyor, `denetci`/`disgoz` yazamaz.
-- **Kurulum denetimi:** 7 kalemden 6'sı geçti; "lokma boyu" kaldı → toplama ikiye bölündü (Ç-04).
-  Düzeltme uygulandı, **yeşili alınmadı** — kendi işime yeşil diyemem, denetim yeniden koşmalı.
-- **Dönem blokajı KALKTI (K-13, sahip onaylı 2026-08-13):** bekçi artık sistemin kendi tuttuğu
-  günlüğü "kirli" sayıp dönemi durdurmuyor; iki gereksiz sarı da kapandı. Ölçüm: `durduran=1
-  uyari=2` → `durduran=0 uyari=0`, ışıklar YEŞİL. Bekçinin kendi sınavı: **140/140**.
-- **SIRADAKİ OTURUM:** `/donem KT-001-proje-plani kurulum` — kurulum denetimi yeniden koşsun
-  (düzeltmeme kendim yeşil diyemem). YEŞİL gelirse `/donem KT-001-proje-plani yapim`.
-- **Blokaj:** yok. **Açık kalan tek şey:** kurulum denetiminin taze yeşili.
-- **Sahibin vetosuna açık:** onarıma üçüncü bir dosya adı eklendi (`kapanis-bulgulari.txt`) —
-  henüz doğmadı ama aynı koddan doğup aynı yanlış alarmı verecekti. "İki sarı" kapsamının
-  dışındaydı; gerekçesi `02_kanon/KARAR_INDEKSI.md` K-13 sınır notunda.
+- **Aktif kutu:** KT-001 — **AÇIK.** Açılış mührü: Ahmet · 2026-08-13. Kurulum denetimi YEŞİL.
+- **Yedi görüş YAZILDI ve defteri kapatıldı:** G-02…G-08 `kapalı`, kanıt hücrelerinde ölçülen
+  dosya yolu. İş kaybolmadı. Kalan iki görev: G-01 (kutu içi toplama) · G-09 (kanon toplama).
+- **Dönem duran kapıda bitti — sebebi ÇÖKME değil, benim planlama hatam.** Toplama görevlerini
+  yalnız kendimin kapatabileceği satırların arkasına bağlamıştım; tek yazar kendi ürününün
+  arkasında kilitlendi ve dönem boyunca hiç sevk edilmedim. Onarıldı (Ç-05): bağımlılık satır
+  kontrolünden **dosya kontrolüne** çevrildi — G-09 girdisini diskte arar, yoksa DUR der.
+- **SIRADAKİ OTURUM:** `/donem KT-001-proje-plani yapim` — G-01 ve G-09 koşar, dört çıktı doğar.
+- **Blokaj:** yok. **Bilinen kalıntı:** iki toplama da dönüşünden sonra kendi satırını açık
+  bırakacak; onları el-sürüşlü koordinatör oturumu kapatır. Dönem bunun için duracak, bu
+  beklenen — çökme değil.
+- **Sarı:** `03_roller/icerik/DURUM.md` tavanı aşmış (2498B > 2048). O dosyanın yazarı içerik
+  koltuğu; ben dokunamam (F1), bir sonraki içerik oturumu kırpar.
+- **Sahibe giden 1 madde:** defteri sistemin kendisinin kapatması için korumalı dosyada tek
+  seferlik değişiklik izni. **Bloklamıyor** — kutu bu izin olmadan da bitebilir.

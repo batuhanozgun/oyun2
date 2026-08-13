@@ -25,28 +25,25 @@ nereye kaydedileceğini çıkarın.
 | Görev | İş | Sahip | Durum | Kanıt |
 |---|---|---|---|---|
 | G-01 | Toplama-1 (kutu içi): sekiz görüşten `BILINMEYENLER.md` + `KAYIT_DUZENI.md` | koordinator | açık | demo: iki dosya sahibe açılıp okunur |
-| G-02 | Ürün görüşü — üç soru (biçim aşağıda) | urun | açık | demo: `gorus-urun.md` üç başlıkla dolu |
-| G-03 | Pedagoji görüşü — üç soru | pedagoji | açık | demo: `gorus-pedagoji.md` üç başlıkla dolu |
-| G-04 | Oyun tasarımı görüşü — üç soru | oyuntasarim | açık | demo: `gorus-oyuntasarim.md` üç başlıkla dolu |
-| G-05 | Çocuk güvenliği görüşü — üç soru | guvenlik | açık | demo: `gorus-guvenlik.md` üç başlıkla dolu |
-| G-06 | İçerik görüşü — üç soru | icerik | açık | demo: `gorus-icerik.md` üç başlıkla dolu |
-| G-07 | Tasarım görüşü — üç soru | tasarim | açık | demo: `gorus-tasarim.md` üç başlıkla dolu |
-| G-08 | Geliştirici görüşü — üç soru | gelistirici | açık | demo: `gorus-gelistirici.md` üç başlıkla dolu |
+| G-02 | Ürün görüşü — üç soru (biçim aşağıda) | urun | kapalı | 01_kutular/KT-001-proje-plani/gorus-urun.md · 2032B · 3 başlık |
+| G-03 | Pedagoji görüşü — üç soru | pedagoji | kapalı | 01_kutular/KT-001-proje-plani/gorus-pedagoji.md · 2002B · 3 başlık |
+| G-04 | Oyun tasarımı görüşü — üç soru | oyuntasarim | kapalı | 01_kutular/KT-001-proje-plani/gorus-oyuntasarim.md · 2010B · 3 başlık |
+| G-05 | Çocuk güvenliği görüşü — üç soru | guvenlik | kapalı | 01_kutular/KT-001-proje-plani/gorus-guvenlik.md · 2036B · 3 başlık |
+| G-06 | İçerik görüşü — üç soru | icerik | kapalı | 01_kutular/KT-001-proje-plani/gorus-icerik.md · 1987B · 3 başlık |
+| G-07 | Tasarım görüşü — üç soru | tasarim | kapalı | 01_kutular/KT-001-proje-plani/gorus-tasarim.md · 2020B · 3 başlık |
+| G-08 | Geliştirici görüşü — üç soru | gelistirici | kapalı | 01_kutular/KT-001-proje-plani/gorus-gelistirici.md · 2029B · 3 başlık |
 | G-09 | Toplama-2 (kanon): `BITTI_TANIMI.md` + `KUTU_PLANI.md` iskelet olmaktan çıkar | koordinator | açık | demo: iki dosya sahibe açılıp okunur; ikisinde de `(iskelet — ilk kutu doldurur` satırı KALMAZ |
 
-**Görev listesini G-01 doğurur.** Koordinatör ilk iş olarak **iş zincirindeki her role bir görev**
-açar (G-02, G-03, …; bir görev = bir rol = bir alt-ajan çağrısı — `tools/sevk/devir-kapisi.sh` iç
-içe alt-ajanı durdurur). **Dış göz ve yazamaz koltuklar HARİÇ:** onlar iş zincirinin dışındadır ve
-dosya yazamazlar (rol kafesi kancada kesin engeldir — görev verilirse alt-ajan çağrısı exit 2 ile
-düşer). Her rol **kendi dosyasına** yazar: `01_kutular/KT-001-proje-plani/gorus-<slug>.md`
-— üç soru: projenin sonunda ne olacak · süreçte neye ihtiyacım var · hafızasız oturum için ne
-kaydedilmeli. **Son görev yine koordinatörün:** hepsini aşağıdaki dört çıktıda toplar.
+**Görev listesini G-01 doğurdu** (2026-08-13): iş zincirindeki her yazabilir role bir görüş
+görevi + iki toplama. Bir görev = bir rol = bir alt-ajan çağrısı. Dış göz ve yazamaz koltuklar
+iş zincirinin dışındadır.
 
-**Bu kutunun görev tavanı:** iş zincirindeki rol başına en çok bir görev + bir toplama görevi
-(sevk bu sayıyı `03_roller/` altındaki yazamaz-olmayan rollerden okur ve aşılırsa haber verir). EL_KITABI
-kutu-döngüsü 1'deki **≤5 görev** tavanı *ürün dilimi* kutuları içindir (tek faz · tek
-gözle-görülür demo · tek domain rolü); bu kutu ürün dilimi değil, planlama kutusudur ve
-görev sayısı kadro büyüklüğünün türevidir. Sapma değil, tanımlı istisnadır.
+**Görev tavanı:** rol başına en çok bir görev + toplama (sevk sayıyı `03_roller/` altındaki
+yazamaz-olmayan rollerden okur). EL_KITABI kutu-döngüsü 1'deki ≤5 tavanı *ürün dilimi* kutuları
+içindir; bu planlama kutusudur ve tavanı kadro büyüklüğünün türevidir — tanımlı istisna.
+
+kırpıldı: bu iki paragrafın uzun hâli (kim yazamaz, hangi kanca keser, üç sorunun metni) —
+liste doğduğu için tarihçe oldu; soruların metni "Görüş görevi" bölümünde canlı duruyor.
 
 ## Görüş görevi (G-02…G-08) — ne yazılır
 
@@ -68,25 +65,23 @@ Her başlık **kendi koltuğundan** cevaplanır (KADRO'daki eksen ayrımı: kom�
 Liste doğdu: **7 görüş + 2 toplama.** G-01'in "liste doğur" yarısı bu oturumda elle bitti;
 satırı toplamaya daraltıldı (Ç-04). Tavan 10 (kadro 9 + toplama), kullanılan 9.
 
-- **Ç-04 · Toplama İKİYE bölündü** (kurulum denetçisi kalem 4 · KIRMIZI · 2026-08-13). Tek
-  çağrıda dört belge F3'ün "tek çıktı" ölçüsünü aşıyordu; asıl kanıt: `maxTurns` kesmesi
-  İŞARETSİZ (OTONOM_DONEM §4) — yarıda kesilen çağrı yarım kanon bırakır, tek `Durum`
-  hücresinden hangisinin bittiği okunamaz. **G-01** kutu içine, **G-09** kanona yazar; ikinci
-  kesit `İZİN: kutu-ciktilari` yüzeyiyle birebir örtüşür. İkisi de koordinatörde: her iki kanon
-  dosyasının `yazar:` satırı onu gösteriyor, koltuk değiştirmek F1 yazar devri olurdu.
-  **Kapsam koruması:** bitti tanımının içeriği ürün sorumlusunundur — G-09 onu G-02'den
-  DEVŞİRİR, üretmez; G-02 cevaplamamışsa `BOŞLUK` yazar.
-- **`koordinator` görüşü G-NN olarak açılmadı:** elle yazıldı (`gorus-koordinator.md`) — aynı
-  koltuk, bir dönem çağrısı tasarrufu, bu oturumun bağlamı hafızasız toplamaya taşınır. [Ç-03]
-- **`yayin` görev ALMADI** — uyuyan koltuk; üç uyanma tetiğinin hiçbiri doğmadı, uyandırmak
-  kadro değişikliğidir ve mühür ister. [BİLİNÇLİ-DIŞARIDA] · **`denetci`·`disgoz`** yazamaz,
-  iş zinciri dışı.
-- **Ç-01 · Görüş görevi soru-başına bölünmedi.** F3 taneciği ile planlama kutusu tavanı çatıştı
-  (7×3=21 görev, tavanın iki katı); daha özel kural kazandı. F3'ün amacı bu boyutta zaten
-  karşılanıyor — kurulum denetçisi de bu muafiyeti savunulabilir buldu. Retro adayı.
-- **Ç-02 · ROL.md ek-okuma satırını toplama GÜNCELLEYEMEZ** (her ROL.md'nin yazarı kendi rolü,
-  F1). G-01 öneri tablosunu `KAYIT_DUZENI.md`'ye yazar; uygulaması her rolün kendi işi.
-  [AÇIK→DEVİR: G-01]
+Gerekçe nesri commit gövdelerinde yaşar (D4b), burada hüküm satırları:
+
+- **Ç-01** görüş görevi soru-başına bölünmedi — F3 taneciği ile planlama kutusu tavanı çatıştı,
+  daha özel kural kazandı. Kurulum denetçisi muafiyeti savunulabilir buldu. · `5b10464`
+- **Ç-02** ROL.md ek-okuma satırını toplama güncelleyemez (F1); G-01 öneri tablosunu
+  `KAYIT_DUZENI.md`'ye yazar, uygulaması her rolün işi. [AÇIK→DEVİR: G-01] · `5b10464`
+- **Ç-03** `koordinator` görüşü elle yazıldı, G-NN açılmadı. · `5b10464`
+- **Ç-04** toplama İKİYE bölündü (kurulum denetçisi kalem 4, KIRMIZI): tek çağrıda dört belge
+  F3'ün "tek çıktı" ölçüsünü aşıyordu; `maxTurns` kesmesi işaretsiz olduğu için yarım kanon
+  kurtarılamazdı. **Kapsam koruması:** bitti tanımının içeriği ürün sorumlusunundur — G-09 onu
+  G-02'den DEVŞİRİR, üretmez; cevaplanmamışsa `BOŞLUK` yazar. · `76aae26`
+- **Ç-05** G-09 önkoşulu `G-01` → **`yok`** (dairesel kilit onarımı). Ölçüldü: sevkin "dönüşü
+  geldi ama satır açık" engeli onkoşul sorgusundan ÖNCE koşar; tablonun tek meşru yazarı
+  koordinatör olduğu için iki toplama da kendi ürününün arkasına kilitlenmişti ve dönem boyunca
+  hiç sevk edilmedi. **Bağımlılık kalkmadı, biçim değiştirdi: G-09'un İLK İŞİ dosya kontrolüdür**
+  — `BILINMEYENLER.md` + `KAYIT_DUZENI.md` diskte yoksa yazmaz, zarfına DUR yazar, döner.
+- **`yayin`** görev almadı (uyuyan; tetik yok) · **`denetci`·`disgoz`** yazamaz, iş zinciri dışı.
 
 ## Dört ortak çıktı (kutunun ürünü)
 | Çıktı | Nereye yazılır |
@@ -128,7 +123,7 @@ gerekmiyorsa `yok`). Ekibin commit atması isteniyorsa `git-obje` eklenir — bu
 
 ## Bağımlılık ve risk (yalnız sevk + kurulum denetçisi okur)
 G-01: onkosul=G-02 G-03 G-04 G-05 G-06 G-07 G-08 · risk=düşük — kutu-içi toplama; sekiz görüş yazılmadan türetilemez, çıktısı kutu içinde kalır
-G-09: onkosul=G-01 · risk=düşük — kanon toplaması; iki dosya İZİN sınıfının kapsamı, girdisi G-01'in iki çıktısı
+G-09: onkosul=yok · risk=düşük — kanon toplaması; bağımlılık satır değil DOSYA kontrolüyle taşınır (Ç-05): G-01'in iki çıktısı diskte yoksa yazmaz, DUR döner
 G-02: onkosul=yok · risk=düşük — görüş yazımı; ürün koduna dokunmaz, geri dönüşü dosya silmektir
 G-03: onkosul=yok · risk=düşük — görüş yazımı; kaynaklı zemin, karar basmaz
 G-04: onkosul=yok · risk=düşük — görüş yazımı; mekanik kurmaz, yalnız ihtiyacını yazar
