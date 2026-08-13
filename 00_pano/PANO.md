@@ -3,10 +3,10 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 11:03 (denetim #31)
+Son denetim: 2026-08-13 11:06 (denetim #32)
 Işıklar: AKIŞ=YEŞİL · DOSYA=SARI
 Görevler: G-01=açık · G-02=kapalı · G-03=kapalı · G-04=kapalı · G-05=kapalı · G-06=kapalı · G-07=kapalı · G-08=kapalı · G-09=açık
-Sahipte bekleyen: 4
+Sahipte bekleyen: 0
 Sıra: sahip
 Kırmızı: 0 · Sarı: 1
 ```
