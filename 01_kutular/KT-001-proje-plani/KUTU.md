@@ -24,7 +24,7 @@ nereye kaydedileceğini çıkarın.
 ## Görevler
 | Görev | İş | Sahip | Durum | Kanıt |
 |---|---|---|---|---|
-| G-01 | Toplama-1 (kutu içi): sekiz görüşten `BILINMEYENLER.md` + `KAYIT_DUZENI.md` | koordinator | açık | demo: iki dosya sahibe açılıp okunur |
+| G-01 | Toplama-1 (kutu içi): sekiz görüşten `BILINMEYENLER.md` + `KAYIT_DUZENI.md` | koordinator | kapalı | 01_kutular/KT-001-proje-plani/BILINMEYENLER.md:1-77 |
 | G-02 | Ürün görüşü — üç soru (biçim aşağıda) | urun | kapalı | 01_kutular/KT-001-proje-plani/gorus-urun.md · 2032B · 3 başlık |
 | G-03 | Pedagoji görüşü — üç soru | pedagoji | kapalı | 01_kutular/KT-001-proje-plani/gorus-pedagoji.md · 2002B · 3 başlık |
 | G-04 | Oyun tasarımı görüşü — üç soru | oyuntasarim | kapalı | 01_kutular/KT-001-proje-plani/gorus-oyuntasarim.md · 2010B · 3 başlık |

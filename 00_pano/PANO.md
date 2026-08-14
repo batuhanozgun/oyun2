@@ -3,12 +3,12 @@
 
 ## MEKANİK BLOK — yalnız bekçi yazar
 ```
-Son denetim: 2026-08-13 11:52 (denetim #36)
+Son denetim: 2026-08-13 12:50 (denetim #39)
 Işıklar: AKIŞ=YEŞİL · DOSYA=SARI
-Görevler: G-01=açık · G-02=kapalı · G-03=kapalı · G-04=kapalı · G-05=kapalı · G-06=kapalı · G-07=kapalı · G-08=kapalı · G-09=açık
+Görevler: G-01=kapalı · G-02=kapalı · G-03=kapalı · G-04=kapalı · G-05=kapalı · G-06=kapalı · G-07=kapalı · G-08=kapalı · G-09=açık
 Sahipte bekleyen: 0
 Sıra: sahip
-Kırmızı: 0 · Sarı: 1
+Kırmızı: 0 · Sarı: 2
 ```
 
 ## YARGI BLOĞU — yazar: koordinator
